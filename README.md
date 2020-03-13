@@ -1,4 +1,6 @@
-# Otsikko
+# OhTe, harjoitustyö
+
+## Viikko 1
 
 Markdown-notaatiolla voi tehdä esimerkiksi **näin** tai *näin*.
 
