@@ -11,4 +11,5 @@ Markdown-notaatiolla voi tehdä esimerkiksi **näin** tai *näin*!
 ## Viikko 2
 
 [vaatimusmäärittely](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/documentointi/vaatimusmaarittely.md)
+
 [työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/documentointi/tyoaikakirjanpito.md)
