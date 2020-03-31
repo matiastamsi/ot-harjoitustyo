@@ -16,4 +16,4 @@ Markdown-notaatiolla voi tehdä esimerkiksi **näin** tai *näin*!
 
 ## Viikko 2
 
-[viikko3] (https://github.com/matiastamsi/ot-harjoitustyo/tree/master/laskarit/viikko3)
+[viikko3](https://github.com/matiastamsi/ot-harjoitustyo/tree/master/laskarit/viikko3)
