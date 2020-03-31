@@ -1,19 +1,12 @@
-# OhTe, harjoitustyö
+# FlyfishingGame
 
-## Viikko 1
+FlyfishingGame-sovellus on peli, jossa perhokalastetaan. Perhokalastukselle tyypillisesti kalastus tapahtuu koskessa.
 
-Markdown-notaatiolla voi tehdä esimerkiksi **näin** tai *näin*!
+Koski ei ole suinkaan hitaasti virtaava joenpätkä, vaan kivinen ja kuohuva. Pelaajan on osattava heittää tarkasti sekä lukea koskea.
 
-[komentorivi.txt](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suorituksiin.
 
-[gitlog.txt](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+## Dokumentaatio
 
-## Viikko 2
-
-[vaatimusmäärittely](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/documentointi/vaatimusmaarittely.md)
-
-[työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/documentointi/tyoaikakirjanpito.md)
-
-## Viikko 3
-
-[viikko3](https://github.com/matiastamsi/ot-harjoitustyo/tree/master/laskarit/viikko3)
+[Vaativuusmäärittely](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[Työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/tree/master/dokumentaatio)
