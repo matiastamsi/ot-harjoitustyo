@@ -22,18 +22,17 @@ Sovelluksella on vain yksi käyttäjärooli eli pelaaja.
 	- kuplia
 	- lehtiä
 	- vapa
-- järjestelmä hakee käyttäjätunnuksen maksimipisteet
-- käyttäjä voi vaihtaa kalastuspaikkaa :heavy_check_mark:
-- heitellä perhoa minne haluaa
-- napata kalan kun kala syö
+- käyttäjä voi vaihtaa kalastuspaikkaa. :heavy_check_mark:
+- heitellä perhoa minne haluaa.
+- napata kalan kun kala syö.
 - pelinäkymässä näkyy pelikerran pisteet, :heavy_check_mark:
 - ... jotka kasvavat saaliin painon mukaan.
-- käyttäjä voi kirjautua ulos, jolloin pisteet tallentuvat, jos ylittävät ennätyksen
+- pisteet tallentuvat, jos pääsee TOP 5 -joukkoon.
+- laidassa näkyy TOP 5 (pelaajan nimimerkki ja pisteet).
 
 ## Jatkokehitysideoita
 
 Perusversiota jatkokehitetään ajansalliessa mm.
-- käyttäjälle näkyy pelin esimerkiksi TOP 3 maksimipistettä ja niiden tekijät
-- joki ja toiminnallisuudet näyttävät mahdollisimman aidolta
-- kalat sijoittuvat varsinkin paikkoihin, jotka vastaavat luonnollista tapaa (kivien muodostamiin virtauksiin)
-- tehokkuus ja toimintavarmuus
+- joki ja toiminnallisuudet näyttävät mahdollisimman aidolta.
+- kalat sijoittuvat varsinkin paikkoihin, jotka vastaavat luonnollista tapaa (kivien muodostamiin virtauksiin).
+- tehokkuus ja toimintavarmuus.
