@@ -10,26 +10,25 @@ Sovelluksella on vain yksi käyttäjärooli eli pelaaja.
 
 ## Perusversion tarjoama toiminnallisuus
 
-### Ennen kirjautumista
+### Ennen pelaamista
 
-- käyttäjä voi luoda uuden käyttäjätunnuksen
-	- käyttäjätunnuksen on oltava uniikki ja vähintään 5 merkkiä
-- käyttäjä voi kirjautua järjestelmään
-	- kirjautuminen onnistuu olemassa olevalla käyttäjätunnuksella
-	- jos käyttäjätunnusta ei löydy, ilmoittaa järjestelmä tästä
+- [x] Näyttöön ilmestyy aloitussivu, jossa tervehditään sekä kerrotaan hiukan tietoa pelistä.
+- [x] käyttäjä valitsee itselleen nimimerkin. 
 
-### Kirjautumisen jälkeen
+### Pelatessa
 
-- käyttäjälle avautuu pelinäkymä (virtaava koski) jossa:
-	- kiviä
-	- kuplia
-	- lehtiä
-- järjestelmä hakee käyttäjätunnuksen maksimipisteet
-- käyttäjä voi vaihtaa kalastuspaikkaa
-- heitellä perhoa minne haluaa
-- napata kalan kun kala syö
-- pelinäkymässä näkyy pelikerran pisteet, jotka kasvavat saaliin painon mukaan
-- käyttäjä voi kirjautua ulos, jolloin pisteet tallentuvat, jos ylittävät ennätyksen
+- [ ] käyttäjälle avautuu pelinäkymä (virtaava koski) jossa:
+	- [x] kiviä
+	- [ ] kuplia
+	- [ ] lehtiä
+	- [x] vapa
+- [ ] järjestelmä hakee käyttäjätunnuksen maksimipisteet
+- [x] käyttäjä voi vaihtaa kalastuspaikkaa
+- [ ] heitellä perhoa minne haluaa
+- [ ] napata kalan kun kala syö
+- [X] pelinäkymässä näkyy pelikerran pisteet, 
+- [ ] ... jotka kasvavat saaliin painon mukaan.
+- [ ] käyttäjä voi kirjautua ulos, jolloin pisteet tallentuvat, jos ylittävät ennätyksen
 
 ## Jatkokehitysideoita
 
