@@ -13,7 +13,7 @@ moving or staying still in the river.
 */
 
 
-public class ObjectInTheRiver {
+public abstract class ObjectInTheRiver {
 
     private double x;
     private double y;
