@@ -12,23 +12,23 @@ Sovelluksella on vain yksi käyttäjärooli eli pelaaja.
 
 ### Ennen pelaamista
 
-- [x] Näyttöön ilmestyy aloitussivu, jossa tervehditään sekä kerrotaan hiukan tietoa pelistä.
-- [x] käyttäjä valitsee itselleen nimimerkin. 
+- Näyttöön ilmestyy aloitussivu, jossa tervehditään sekä kerrotaan hiukan tietoa pelistä. :heavy_check_mark:
+- käyttäjä valitsee itselleen nimimerkin. :heavy_check_mark:
 
 ### Pelatessa
 
-- [ ] käyttäjälle avautuu pelinäkymä (virtaava koski) jossa:
-	- [x] kiviä
-	- [ ] kuplia
-	- [ ] lehtiä
-	- [x] vapa
-- [ ] järjestelmä hakee käyttäjätunnuksen maksimipisteet
-- [x] käyttäjä voi vaihtaa kalastuspaikkaa
-- [ ] heitellä perhoa minne haluaa
-- [ ] napata kalan kun kala syö
-- [X] pelinäkymässä näkyy pelikerran pisteet, 
-- [ ] ... jotka kasvavat saaliin painon mukaan.
-- [ ] käyttäjä voi kirjautua ulos, jolloin pisteet tallentuvat, jos ylittävät ennätyksen
+- käyttäjälle avautuu pelinäkymä (virtaava koski) jossa:
+	- kiviä :heavy_check_mark:
+	- kuplia
+	- lehtiä
+	- vapa
+- järjestelmä hakee käyttäjätunnuksen maksimipisteet
+- käyttäjä voi vaihtaa kalastuspaikkaa :heavy_check_mark:
+- heitellä perhoa minne haluaa
+- napata kalan kun kala syö
+- pelinäkymässä näkyy pelikerran pisteet, :heavy_check_mark:
+- ... jotka kasvavat saaliin painon mukaan.
+- käyttäjä voi kirjautua ulos, jolloin pisteet tallentuvat, jos ylittävät ennätyksen
 
 ## Jatkokehitysideoita
 
