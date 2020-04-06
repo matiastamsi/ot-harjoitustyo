@@ -10,4 +10,4 @@ Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suor
 
 [Vaativuusmäärittely](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[Työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/tree/master/dokumentaatio)
+[Työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
