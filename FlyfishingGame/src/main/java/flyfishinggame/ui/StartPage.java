@@ -1,4 +1,3 @@
-
 package flyfishinggame.ui;
 
 import static flyfishinggame.ui.FlyfishingUi.HEIGHT;
@@ -17,11 +16,16 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
+ * Class creates the start page. Player reads the instructions and gives a
+ * nickname as a player.
  *
  * @author tamsi
  */
 public class StartPage {
 
+    /**
+     * Start page is formed by calling this method.
+     */
     public void createStartingSight() {
         //Use borderpane as a base for features.
         BorderPane startingSight = new BorderPane();
@@ -38,9 +42,8 @@ public class StartPage {
         inputs.setSpacing(30);
         inputs.setAlignment(Pos.CENTER);
         inputs.getChildren().addAll(startingText, nicknameField, startButton);
-        //Add (mayde) picture of a fish also.
         startingSight.setCenter(inputs);
-        
+        //Perhaps a picture of a fish here.
         Scene startScene = new Scene(startingSight);
         stage.setScene(startScene);
         stage.setTitle("FlyfishingGame");

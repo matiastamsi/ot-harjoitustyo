@@ -58,7 +58,7 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>flyfishingame/ui/**/*</exclude>
+                        <exclude>flyfishinggame/ui/**/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

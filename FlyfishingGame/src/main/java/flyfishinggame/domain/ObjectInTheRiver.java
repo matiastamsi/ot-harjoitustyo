@@ -4,13 +4,13 @@ import javafx.geometry.Point2D;
 import javafx.scene.shape.Polygon;
 
 /**
- *
- * @author tamsi
+ *This abstract class describes objects
+ *that can be seen moving or staying still
+ *in the river.
+ * 
+ * @author Matias Tamsi
  */
 
-/*This abstract class describes objects that can be seen
-moving or staying still in the river.
-*/
 
 public abstract class ObjectInTheRiver {
 
@@ -19,6 +19,16 @@ public abstract class ObjectInTheRiver {
     private double size;
     private Polygon shape;
     private Point2D movement;
+    
+    /**
+     * Creates an object that can be presented as
+     * a polygon shaped.
+     * 
+     * @param shape Polygon shape
+     * @param x X-coordinate
+     * @param y Y-coordinate
+     * @param size Size of an object
+     */
 
     public ObjectInTheRiver(Polygon shape, int x, int y, double size) {
         this.x = x;
@@ -29,27 +39,51 @@ public abstract class ObjectInTheRiver {
         this.shape.setTranslateY(y);
         this.movement = new Point2D(0, 0);
     }
-
+    
+    /**
+     * Method returns object's x-coordinate.
+     * @return x
+     */
     public double getX() {
         return x;
     }
-
+    
+    /**
+     * Method returns object's y-coordinate.
+     * @return y
+     */
     public double getY() {
         return y;
     }
-
+    
+    /**
+     * Method returns object's movement as a point.
+     * @return movement
+     */
     public Point2D getMovement() {
         return movement;
     }
-
+    
+    /**
+     * Method sets a new movement (point).
+     * @param movement current point
+     */
     public void setMovement(Point2D movement) {
         this.movement = movement;
     }
-
+    
+    /**
+     * Method returns shape of Polygon shaped object.
+     * @return shape
+     */
     public Polygon getShapePolygon() {
         return shape;
     }
 
+    /**
+     * Method returns the size of an object.
+     * @return size 
+     */
     public double getSize() {
         return size;
     }

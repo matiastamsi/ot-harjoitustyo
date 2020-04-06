@@ -6,4 +6,5 @@
 
 <suppressions>
     <suppress files="flyfishinggame.ui.FlyfishingUi.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="flyfishinggame.ui.StartPage.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

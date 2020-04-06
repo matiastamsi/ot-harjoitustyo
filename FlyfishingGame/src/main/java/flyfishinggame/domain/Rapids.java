@@ -7,17 +7,24 @@ import java.util.*;
 import javafx.animation.AnimationTimer;
 
 /**
+ * The class to represent rapids.
  *
- * @author tamsi
+ * @author Matias Tamsi
  */
 public class Rapids {
 
     public List<Rock> rocks;
-
+    /**
+     * New rapids has list of objects 
+     * (usually objects that extends ObjectInTheRiver).
+     */
     public Rapids() {
         this.rocks = new ArrayList<>();
     }
-
+    /**
+     * This method keeps the water and 
+     * other particles moving and "alive".
+     */
     public void flow() {
         new AnimationTimer() {
 
@@ -28,7 +35,10 @@ public class Rapids {
         }
                 .start();
     }
-
+    /**
+     * Method to create a new river sight
+     * in the beginning or when changing the spot.
+     */
     public void createNewSight() {
         if (!rocks.isEmpty()) {
             rocks.forEach(rock -> pane.getChildren().remove(rock.getShapePolygon()));

@@ -10,6 +10,9 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 /**
+ * The user interface for the app. First show the start page, which tells a
+ * about the game and asks player's nickname. When the player presses the start
+ * button, the start page changes to the actual gaming sight.
  *
  * @author tamsi
  */
@@ -36,11 +39,6 @@ public class FlyfishingUi extends Application {
 
     @Override
     public void start(Stage s) {
-
-        /*First show the startpage, which tells a about the game
-        and asks player's nickname.
-            When the player presses the startbutton, the startpage
-        changes to the actual gamingsight.*/
         //Creation of the startpage.
         stage = s;
         StartPage startpage = new StartPage();
@@ -54,7 +52,7 @@ public class FlyfishingUi extends Application {
         pane.setPrefSize(WIDTH, HEIGHT);
         borderpane.setBottom(pane);
         //Player gets points if catches fish.
-        Text text = new Text(WIDTH - 110, 15,"Points: " + points);
+        Text text = new Text(WIDTH - 110, 15, "Points: " + points);
         borderpane.getChildren().add(text);
         //On the top is relevant instructions for the player.
         Text instructionText = new Text(WIDTH / 2 - 200, 15,
