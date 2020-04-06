@@ -1,15 +1,12 @@
 package flyfishinggame.ui;
 
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
+import flyfishinggame.domain.*;
+import java.util.concurrent.atomic.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 /**
@@ -26,6 +23,7 @@ public class FlyfishingUi extends Application {
     public static TextField nicknameField;
     private AtomicReference<String> nickname;
     private AtomicInteger points;
+    private Rapids rapids;
 
     public FlyfishingUi() {
         this.pane = new Pane();
@@ -33,6 +31,7 @@ public class FlyfishingUi extends Application {
         this.startButton = new Button("Start");
         this.nickname = new AtomicReference<String>();
         this.points = new AtomicInteger();
+        this.rapids = new Rapids();
     }
 
     @Override
@@ -42,14 +41,12 @@ public class FlyfishingUi extends Application {
         and asks player's nickname.
             When the player presses the startbutton, the startpage
         changes to the actual gamingsight.*/
-        
         //Creation of the startpage.
         stage = s;
         StartPage startpage = new StartPage();
         startpage.createStartingSight();
 
         //Creation of the actual gamingsight.
-        
         //Borderpane is the base.
         BorderPane borderpane = new BorderPane();
         borderpane.setPrefSize(WIDTH, HEIGHT);
@@ -57,7 +54,7 @@ public class FlyfishingUi extends Application {
         pane.setPrefSize(WIDTH, HEIGHT);
         borderpane.setBottom(pane);
         //Player gets points if catches fish.
-        Text text = new Text(WIDTH - 110, 15, "Points: " + points);
+        Text text = new Text(WIDTH - 110, 15,"Points: " + points);
         borderpane.getChildren().add(text);
         //On the top is relevant instructions for the player.
         Text instructionText = new Text(WIDTH / 2 - 200, 15,
@@ -76,36 +73,32 @@ public class FlyfishingUi extends Application {
         /*Method is used to make new riversight when called
             in the start or when player decides to 
             change the spot.*/
-        createNewSight();
+        rapids.createNewSight();
 
         Scene scene = new Scene(borderpane);
 
         /*In the startpage is startbutton. When user
         is ready (and presses the startbutton),
         the startpage changes to the actual gaming sight.*/
-        
         startButton.setOnAction((event) -> {
             /*Save the nickname from the textfield.
             and turn it to atomic so that it is saved.*/
             String nm = nicknameField.getText();
             nickname = new AtomicReference<String>(nm);
-            
+
             stage.setTitle("Flyfish!");
             stage.setScene(scene);
             stage.show();
         });
 
         changeSpotButton.setOnAction((event) -> {
-            createNewSight();
+            rapids.createNewSight();
         });
 
     }
 
-    public void createNewSight() {
-        //Needs objects to the river.
-    }
-
     public static void main(String[] args) {
-        launch(FlyfishingUi.class);
+        launch(FlyfishingUi.class
+        );
     }
 }

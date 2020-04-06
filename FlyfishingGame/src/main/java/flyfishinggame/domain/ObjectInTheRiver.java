@@ -8,10 +8,9 @@ import javafx.scene.shape.Polygon;
  * @author tamsi
  */
 
-/*Class describes objects that can be seen
+/*This abstract class describes objects that can be seen
 moving or staying still in the river.
 */
-
 
 public abstract class ObjectInTheRiver {
 
