@@ -13,50 +13,113 @@ import javafx.animation.AnimationTimer;
  */
 public class Rapids {
 
+    private Random r = new Random();
     public List<Rock> rocks;
+    public Bubble[] bubbles;
+    public Leaf[] leaves;
+
     /**
-     * New rapids has list of objects 
-     * (usually objects that extends ObjectInTheRiver).
+     * New rapids has list of rocks.
+     * Bubbles and leaves are stored in the arrays.
+     * This way operations are fast. Because the amount is solid,
+     * variation is created with randomness later on.
      */
     public Rapids() {
         this.rocks = new ArrayList<>();
+        this.bubbles = new Bubble[200];
+        this.leaves = new Leaf[3];
     }
+
     /**
-     * This method keeps the water and 
-     * other particles moving and "alive".
+     * This method keeps the water and other particles moving and "alive".
      */
     public void flow() {
         new AnimationTimer() {
 
             @Override
             public void handle(long now) {
-                //Actions in here.
+
+                for (int i = 0; i < 200; i++) {
+                    if (i < 3) { //Handle leaves.
+                        if (leaves[i].getX() > WIDTH) {
+                            pane.getChildren().remove(leaves[i].getShapePolygon());
+                            if (Math.random() < 0.5) {
+                                continue; //Not always three leaves in the sight.
+                            } else {
+                                leaves[i] = new Leaf(0, r.nextInt(HEIGHT - 50), 10 + r.nextInt(5));
+                                pane.getChildren().add(leaves[i].getShapePolygon());
+                            }
+                        }
+                        leaves[i].movePolygon(0.5);
+                    }
+                    //Handle bubbles.
+                    if (bubbles[i].black.getX() > WIDTH) {
+                        pane.getChildren().remove(bubbles[i].black.getShapeCircle());
+                        pane.getChildren().remove(bubbles[i].white.getShapeCircle());
+                        if (Math.random() < 0.25) {
+                            continue; //Not always 200 bubbles in the sight.
+                        } else {
+                            bubbles[i] = new Bubble(0, r.nextInt(HEIGHT - 50), r.nextInt(7));
+                            pane.getChildren().add(bubbles[i].black.getShapeCircle());
+                            pane.getChildren().add(bubbles[i].white.getShapeCircle());
+                        }
+                    }
+
+                    bubbles[i].black.moveCircle(0.5);
+                    bubbles[i].white.moveCircle(0.5);
+                }
+
             }
         }
                 .start();
     }
+
     /**
-     * Method to create a new river sight
-     * in the beginning or when changing the spot.
+     * Method to create a new river sight in the beginning or when changing the
+     * spot.
      */
     public void createNewSight() {
         if (!rocks.isEmpty()) {
             rocks.forEach(rock -> pane.getChildren().remove(rock.getShapePolygon()));
             rocks.clear();
+            for (int i = 0; i < 200; i++) {
+                if (i < 3) {
+                    pane.getChildren().remove(leaves[i].getShapePolygon());
+                }
+                pane.getChildren().remove(bubbles[i].black.getShapeCircle());
+                pane.getChildren().remove(bubbles[i].white.getShapeCircle());
+            }
         }
 
+        //Create bubbles.
+        for (int i = 0; i < 200; i++) {
+            int positionX = r.nextInt(WIDTH);
+            int positionY = r.nextInt(HEIGHT - 50);
+            double size = r.nextInt(7);
+            Bubble bubble = new Bubble(positionX, positionY, size);
+            bubbles[i] = bubble;
+            pane.getChildren().add(bubble.black.getShapeCircle());
+            pane.getChildren().add(bubble.white.getShapeCircle());
+        }
+        //Create rocks and leaves.
         for (int i = 0; i < 3; i++) {
-            Random rnd = new Random();
+            int positionX = 150 + r.nextInt(WIDTH);
+            int positionY = 50 + r.nextInt(HEIGHT - 50);
+            double size = 40 + r.nextInt(20);
 
-            int positionX = 150 + rnd.nextInt(WIDTH - 150);
-            int positionY = 50 + rnd.nextInt(HEIGHT - 50);
-
-            int size = 40 + rnd.nextInt(20);
             Rock rock = new Rock(positionX, positionY, size);
-            this.rocks.add(rock);
-        }
+            rocks.add(rock);
+            pane.getChildren().add(rock.getShapePolygon());
 
-        rocks.forEach(rock -> pane.getChildren().add(rock.getShapePolygon()));
+            positionX = 150 + r.nextInt(WIDTH);
+            positionY = 50 + r.nextInt(HEIGHT - 50);
+            size = r.nextDouble();
+
+            Leaf leaf = new Leaf(positionX, positionY, size);
+            leaves[i] = leaf;
+            pane.getChildren().add(leaf.getShapePolygon());
+
+        }
 
     }
 }

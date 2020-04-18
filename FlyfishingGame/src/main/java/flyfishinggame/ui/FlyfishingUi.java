@@ -87,6 +87,7 @@ public class FlyfishingUi extends Application {
             stage.setTitle("Flyfish!");
             stage.setScene(scene);
             stage.show();
+            rapids.flow();
         });
 
         changeSpotButton.setOnAction((event) -> {

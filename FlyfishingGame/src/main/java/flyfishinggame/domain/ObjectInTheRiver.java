@@ -1,6 +1,7 @@
 package flyfishinggame.domain;
 
 import javafx.geometry.Point2D;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 
 /**
@@ -18,6 +19,7 @@ public abstract class ObjectInTheRiver {
     private double y;
     private double size;
     private Polygon shape;
+    private Circle circle;
     private Point2D movement;
     
     /**
@@ -29,7 +31,6 @@ public abstract class ObjectInTheRiver {
      * @param y Y-coordinate
      * @param size Size of an object
      */
-
     public ObjectInTheRiver(Polygon shape, int x, int y, double size) {
         this.x = x;
         this.y = y;
@@ -37,6 +38,25 @@ public abstract class ObjectInTheRiver {
         this.shape = shape;
         this.shape.setTranslateX(x);
         this.shape.setTranslateY(y);
+        this.movement = new Point2D(0, 0);
+    }
+    
+    /**
+     * Creates an object that can be presented as
+     * a circle.
+     * 
+     * @param circle Circle shape
+     * @param x X-coordinate
+     * @param y Y-coordinate
+     * @param size Size of an object
+     */
+    public ObjectInTheRiver(Circle circle, int x, int y, double size) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.circle = circle;
+        this.circle.setTranslateX(x);
+        this.circle.setTranslateY(y);
         this.movement = new Point2D(0, 0);
     }
     
@@ -79,6 +99,14 @@ public abstract class ObjectInTheRiver {
     public Polygon getShapePolygon() {
         return shape;
     }
+    
+    /**
+     * Method returns shape of Circle shaped object.
+     * @return circle
+     */
+    public Circle getShapeCircle() {
+        return circle;
+    }
 
     /**
      * Method returns the size of an object.
@@ -87,4 +115,32 @@ public abstract class ObjectInTheRiver {
     public double getSize() {
         return size;
     }
+    
+    /**
+     * Move polygon shaped object to right 
+     * in the river (flow).
+     * @param speed Speed of the flow.
+     */
+    public void movePolygon(double speed) {
+
+        this.x = this.shape.getTranslateX() + speed + this.movement.getX();
+        this.shape.setTranslateX(this.shape.getTranslateX() + speed + this.movement.getX());
+        this.y = this.shape.getTranslateY() + this.movement.getY();
+        this.shape.setTranslateY(this.shape.getTranslateY() + this.movement.getY());
+
+    }
+    
+    /**
+     * Move circle shaped object to right 
+     * in the river (flow).
+     * @param speed Speed of the flow.
+     */
+    public void moveCircle(double speed) {
+        this.x = this.circle.getTranslateX() + speed + this.movement.getX();
+        this.circle.setTranslateX(this.circle.getTranslateX() + speed + this.movement.getX());
+        this.y = this.circle.getTranslateY() + this.movement.getY();
+        this.circle.setTranslateY(this.circle.getTranslateY() + this.movement.getY());
+    }
+    
+    
 }
