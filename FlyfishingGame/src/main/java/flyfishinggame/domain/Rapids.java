@@ -19,9 +19,8 @@ public class Rapids {
     public Leaf[] leaves;
 
     /**
-     * New rapids has list of rocks.
-     * Bubbles and leaves are stored in the arrays.
-     * This way operations are fast. Because the amount is solid,
+     * New rapids has list of rocks. Bubbles and leaves are stored in the
+     * arrays. This way operations are fast. Because the amount is solid,
      * variation is created with randomness later on.
      */
     public Rapids() {
@@ -46,7 +45,7 @@ public class Rapids {
                             if (Math.random() < 0.5) {
                                 continue; //Not always three leaves in the sight.
                             } else {
-                                leaves[i] = new Leaf(0, r.nextInt(HEIGHT - 50), 10 + r.nextInt(5));
+                                leaves[i] = new Leaf(0, 25 + r.nextInt(HEIGHT - 25), r.nextDouble());
                                 pane.getChildren().add(leaves[i].getShapePolygon());
                             }
                         }
@@ -59,7 +58,7 @@ public class Rapids {
                         if (Math.random() < 0.25) {
                             continue; //Not always 200 bubbles in the sight.
                         } else {
-                            bubbles[i] = new Bubble(0, r.nextInt(HEIGHT - 50), r.nextInt(7));
+                            bubbles[i] = new Bubble(0, 25 + r.nextInt(HEIGHT - 25), r.nextInt(5));
                             pane.getChildren().add(bubbles[i].black.getShapeCircle());
                             pane.getChildren().add(bubbles[i].white.getShapeCircle());
                         }
@@ -94,8 +93,8 @@ public class Rapids {
         //Create bubbles.
         for (int i = 0; i < 200; i++) {
             int positionX = r.nextInt(WIDTH);
-            int positionY = r.nextInt(HEIGHT - 50);
-            double size = r.nextInt(7);
+            int positionY = 25 + r.nextInt(HEIGHT - 25);
+            double size = r.nextInt(5);
             Bubble bubble = new Bubble(positionX, positionY, size);
             bubbles[i] = bubble;
             pane.getChildren().add(bubble.black.getShapeCircle());
@@ -111,8 +110,8 @@ public class Rapids {
             rocks.add(rock);
             pane.getChildren().add(rock.getShapePolygon());
 
-            positionX = 150 + r.nextInt(WIDTH);
-            positionY = 50 + r.nextInt(HEIGHT - 50);
+            positionX = r.nextInt(WIDTH);
+            positionY = 25 + r.nextInt(HEIGHT - 25);
             size = r.nextDouble();
 
             Leaf leaf = new Leaf(positionX, positionY, size);
