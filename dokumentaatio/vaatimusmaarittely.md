@@ -17,11 +17,11 @@ Sovelluksella on vain yksi käyttäjärooli eli pelaaja.
 
 ### Pelatessa
 
-- käyttäjälle avautuu pelinäkymä (virtaava koski) jossa:
+- käyttäjälle avautuu pelinäkymä (virtaava koski) jossa: :heavy_check_mark:
 	- kiviä :heavy_check_mark:
-	- kuplia
-	- lehtiä
-	- vapa
+	- kuplia :heavy_check_mark:
+	- lehtiä :heavy_check_mark:
+	- vapa :heavy_check_mark:
 - käyttäjä voi vaihtaa kalastuspaikkaa. :heavy_check_mark:
 - heitellä perhoa minne haluaa.
 - napata kalan kun kala syö.

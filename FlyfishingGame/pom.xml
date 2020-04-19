@@ -59,6 +59,7 @@
                 <configuration>
                     <excludes>
                         <exclude>flyfishinggame/ui/**/*</exclude>
+                        <exclude>flyfishinggame/domain/Rapids*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

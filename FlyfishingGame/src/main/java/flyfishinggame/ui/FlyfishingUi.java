@@ -48,6 +48,8 @@ public class FlyfishingUi extends Application {
         //Borderpane is the base.
         BorderPane borderpane = new BorderPane();
         borderpane.setPrefSize(WIDTH, HEIGHT);
+        String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
+        borderpane.setStyle(style);
         //Pane is the area for the action.
         pane.setPrefSize(WIDTH, HEIGHT);
         borderpane.setBottom(pane);
@@ -67,11 +69,6 @@ public class FlyfishingUi extends Application {
         HBox buttons = new HBox();
         buttons.getChildren().add(changeSpotButton);
         borderpane.setTop(buttons);
-
-        /*Method is used to make new riversight when called
-            in the start or when player decides to 
-            change the spot.*/
-        rapids.createNewSight();
 
         Scene scene = new Scene(borderpane);
 
@@ -94,10 +91,14 @@ public class FlyfishingUi extends Application {
             rapids.createNewSight();
         });
 
+        /*Method is used to make new riversight when called
+            in the start or when player decides to 
+            change the spot.*/
+        rapids.createNewSight();
+
     }
 
     public static void main(String[] args) {
-        launch(FlyfishingUi.class
-        );
+        launch(FlyfishingUi.class);
     }
 }

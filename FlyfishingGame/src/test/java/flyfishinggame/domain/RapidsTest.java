@@ -13,9 +13,17 @@ public class RapidsTest {
     Rapids r;
     
     @Test
-    public void thereIsZeroRocksAtTheBeginning() {
+    public void thereIsZeroObjectsAtTheBeginning() {
         r = new Rapids();
-        //In the beginning there is zero rocks.
+        //Check rocks.
         assertEquals(0, r.rocks.size());
+        //Check buffers.
+        assertEquals(0, r.buffers.size());
+        //Check taken area.
+        assertEquals(0, r.takenAreas.size());
+        //Check bubbles.
+        assertEquals(200, r.bubbles.length);
+        //Check leaves.
+        assertEquals(3, r.leaves.length);
     }
 }
