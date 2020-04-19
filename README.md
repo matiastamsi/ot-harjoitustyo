@@ -14,6 +14,22 @@ Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suor
 
 [Työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-## Release
+## Releaset
 
-[I -release](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko5)
+[Viikko 5](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko5)
+
+## Komentorivitoiminnot
+
+### Testaaminen
+
+- Testit suoritetaan komennolla _mvn test_.
+- Testikattavuusraportti luodaan komennolla _mvn jacoco:report_.
+  (Sitä voi tarkastella selaimessa avaamalla tiedosto _target/site/jacoco/index.html_).
+
+## Suoritettavan jarin generointi
+
+- Komennolla _mvn package_ hakemistoon target generoituu suoritettava jar-tiedosto nimeltä _FlyfishingGame-1.0-SNAPSHOT.jar_.
+
+## Checkstyle
+- Checkstyle tarkistukset onnistuvat komennolla _mvn jxr:jxr checkstyle:checkstyle_ ja tuloksia voi tarkastella avaamalla tiedoston _target/site/checkstyle.html_ selaimessa.
+
