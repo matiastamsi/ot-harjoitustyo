@@ -16,4 +16,4 @@ Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suor
 
 ## Release
 
-[I-release](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko5)
+[I -release](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko5)
