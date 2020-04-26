@@ -6,8 +6,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 
 /**
- * This abstract class describes objects 
- * that can be seen moving or staying
+ * This abstract class describes objects that can be seen moving or staying
  * still in the river.
  *
  * @author Matias Tamsi
@@ -30,7 +29,7 @@ public abstract class ObjectInTheRiver {
      * @param y Y-coordinate
      * @param size Size of an object
      */
-    public ObjectInTheRiver(Polygon shape, int x, int y, double size) {
+    public ObjectInTheRiver(Polygon shape, double x, double y, double size) {
         this.x = x;
         this.y = y;
         this.size = size;
@@ -130,11 +129,11 @@ public abstract class ObjectInTheRiver {
      */
     public void movePolygon(double speed) {
 
-        this.x = this.shape.getTranslateX() 
+        this.x = this.shape.getTranslateX()
                 + speed + this.movement.getX();
-        this.shape.setTranslateX(this.shape.getTranslateX() 
+        this.shape.setTranslateX(this.shape.getTranslateX()
                 + speed + this.movement.getX());
-        this.y = this.shape.getTranslateY() 
+        this.y = this.shape.getTranslateY()
                 + this.movement.getY();
         this.shape.setTranslateY(this.shape.getTranslateY()
                 + this.movement.getY());
@@ -147,31 +146,30 @@ public abstract class ObjectInTheRiver {
      * @param speed Speed of the flow.
      */
     public void moveCircle(double speed) {
-        this.x = this.circle.getTranslateX() 
+        this.x = this.circle.getTranslateX()
                 + speed + this.movement.getX();
         this.circle.setTranslateX(this.circle.getTranslateX()
                 + speed + this.movement.getX());
         this.y = this.circle.getTranslateY()
                 + this.movement.getY();
-        this.circle.setTranslateY(this.circle.getTranslateY() 
+        this.circle.setTranslateY(this.circle.getTranslateY()
                 + this.movement.getY());
     }
 
     /**
-     * Inform if circle shaped object hits
-     * to another circle shaped object.
+     * Inform if circle shaped object hits to another circle shaped object.
      *
      * @param other Another circle object.
      * @return Boolean value to tell if it hits.
      */
     public boolean crashCircleToCircle(ObjectInTheRiver other) {
-        Shape crasharea = Shape.intersect(this.circle, 
+        Shape crasharea = Shape.intersect(this.circle,
                 other.getShapeCircle());
         return crasharea.getBoundsInLocal().getWidth() != -1;
     }
+
     /**
-     * Inform if polygon shaped object hits
-     * to circle shaped object.
+     * Inform if polygon shaped object hits to circle shaped object.
      *
      * @param other Another circle shaped object.
      * @return Boolean value to tell if it hits.
@@ -180,10 +178,9 @@ public abstract class ObjectInTheRiver {
         Shape crasharea = Shape.intersect(this.shape, other.getShapeCircle());
         return crasharea.getBoundsInLocal().getWidth() != -1;
     }
-    
+
     /**
-     * Inform if polygon shaped object hits
-     * to another polygon shaped object.
+     * Inform if polygon shaped object hits to another polygon shaped object.
      *
      * @param other Another polygon shaped object.
      * @return Boolean value to tell if it hits.
@@ -194,9 +191,8 @@ public abstract class ObjectInTheRiver {
     }
 
     /**
-     * Move circle to left and to the direction 
-     * (up or down) if the
-     * object is already rotating something.
+     * Move circle to left and to the direction (up or down) if the object is
+     * already rotating something.
      *
      * @param other Other object ahead.
      */
@@ -220,33 +216,55 @@ public abstract class ObjectInTheRiver {
                 + this.movement.getY());
 
     }
-    
+
     /**
-     * Move polygon to left and to the direction 
-     * (up or down) if the
-     * object is already rotating something.
+     * Move polygon to left and to the direction (up or down) if the object is
+     * already rotating something.
      *
      * @param other Other object ahead.
      */
     public void movePolygonAside(ObjectInTheRiver other) {
 
-        if (this.shape.getTranslateY() 
+        if (this.shape.getTranslateY()
                 < other.getShapeCircle().getTranslateY()
                 + other.getShapeCircle().getCenterY()) {
             this.direction = -1;
         } else {
             this.direction = 1;
         }
-        this.x = this.shape.getTranslateX() 
+        this.x = this.shape.getTranslateX()
                 - 0.5 + this.movement.getX();
-        this.shape.setTranslateX(this.shape.getTranslateX() 
+        this.shape.setTranslateX(this.shape.getTranslateX()
                 - 0.5 + this.movement.getX());
-        this.y = this.shape.getTranslateY() 
-                + this.direction 
+        this.y = this.shape.getTranslateY()
+                + this.direction
                 + this.movement.getY();
-        this.shape.setTranslateY(this.shape.getTranslateY() 
-                + this.direction 
+        this.shape.setTranslateY(this.shape.getTranslateY()
+                + this.direction
                 + this.movement.getY());
     }
 
+    /**
+     * Method to move polygon shaped object down.
+     *
+     * @param speed Speed of the flow.
+     */
+    public void movePolygonDown(double speed) {
+        this.x = this.shape.getTranslateX() + speed + this.movement.getX();
+        this.shape.setTranslateX(this.shape.getTranslateX() + speed + this.movement.getX());
+        this.y = this.shape.getTranslateY() + speed + this.movement.getY();
+        this.shape.setTranslateY(this.shape.getTranslateY() + speed + this.movement.getY());
+    }
+
+    /**
+     * Method to move polygon shaped object up.
+     *
+     * @param speed Speed of the flow.
+     */
+    public void movePolygonUp(double speed) {
+        this.x = this.shape.getTranslateX() + speed + this.movement.getX();
+        this.shape.setTranslateX(this.shape.getTranslateX() + speed + this.movement.getX());
+        this.y = this.shape.getTranslateY() - speed - this.movement.getY();
+        this.shape.setTranslateY(this.shape.getTranslateY() - speed - this.movement.getY());
+    }
 }

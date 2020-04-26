@@ -12,8 +12,8 @@ import javafx.scene.shape.Circle;
 public class BlackCircle extends ObjectInTheRiver {
 
     /**
-     * The object gets coordinates and size.
-     * Also, the colour is defined as black.
+     * The object gets coordinates and size. Also, the colour is defined as
+     * black.
      *
      * @param x coordinate
      * @param y coordinate

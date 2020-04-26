@@ -1,6 +1,4 @@
-
 package flyfishinggame.domain;
-
 
 import javafx.scene.shape.Polygon;
 import org.junit.After;
@@ -15,9 +13,9 @@ import static org.junit.Assert.*;
  * @author tamsi
  */
 public class RockFactoryTest {
-    
+
     RockFactory rf;
-    
+
     @Test
     public void factoryMakesUniqueRock() {
         rf = new RockFactory();

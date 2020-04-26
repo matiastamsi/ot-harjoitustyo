@@ -1,18 +1,20 @@
-
 package flyfishinggame.domain;
+
 /**
- * Class to represent rocks
- * in the rapids.
- * 
+ * Class to represent rocks in the rapids.
+ *
  * @author Matias Tamsi
  */
 public class Rock extends ObjectInTheRiver {
+
     private double size;
     private int x;
     private int y;
+
     /**
-     * Rock needs coordinates and size.
-     * Every rock is unique due to the RockFactory.
+     * Rock needs coordinates and size. Every rock is unique due to the
+     * RockFactory.
+     *
      * @param x X-coordinate
      * @param y Y-coordinate
      * @param size the size of the rock
@@ -22,16 +24,20 @@ public class Rock extends ObjectInTheRiver {
         this.x = x;
         this.y = y;
     }
+
     /**
      * Method returns the x-coordinate.
+     *
      * @return x
      */
     @Override
     public double getX() {
         return x;
     }
+
     /**
      * Method returns the y-coordinate.
+     *
      * @return y
      */
     @Override

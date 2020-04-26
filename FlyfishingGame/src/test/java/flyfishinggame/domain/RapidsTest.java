@@ -1,4 +1,3 @@
-
 package flyfishinggame.domain;
 
 import org.junit.Test;
@@ -9,9 +8,9 @@ import static org.junit.Assert.*;
  * @author tamsi
  */
 public class RapidsTest {
-    
+
     Rapids r;
-    
+
     @Test
     public void thereIsZeroObjectsAtTheBeginning() {
         r = new Rapids();

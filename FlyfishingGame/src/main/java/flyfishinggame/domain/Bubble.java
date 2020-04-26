@@ -15,8 +15,7 @@ public class Bubble {
     public WhiteCircle white;
 
     /**
-     * A bubble is created with a white 
-     * circle on top of a black circle. The
+     * A bubble is created with a white circle on top of a black circle. The
      * size difference makes it look like a bubble.
      *
      * @param x coordinate

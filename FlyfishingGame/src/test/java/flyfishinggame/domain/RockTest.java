@@ -14,7 +14,7 @@ public class RockTest {
 
     @Test
     public void constructorSetsTheSizeRight() {
-        rock = new Rock(1,1,123);
+        rock = new Rock(1, 1, 123);
         assertEquals(123, rock.getSize(), 0);
     }
 
@@ -24,7 +24,7 @@ public class RockTest {
         //Rock won't move.
         assertEquals(new Point2D(0, 0), rock.getMovement());
     }
-    
+
     @Test
     public void contructorSetsTheCoordinatesRight() {
         rock = new Rock(198, 252, 67);

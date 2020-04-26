@@ -1,21 +1,17 @@
-
 package flyfishinggame;
 
 import flyfishinggame.ui.FlyfishingUi;
+
 /**
- * The main class to start the app
- * by calling the user interface.
+ * The main class to start the app by calling the user interface.
  *
  * @author Matias Tamsi
  */
-
 public class Main {
-    
     /**
-     * Calls the main method in
-     * user interface.
-     * 
-     * @param args 
+     * Calls the main method in user interface.
+     *
+     * @param args The arguments given.
      */
     public static void main(String[] args) {
         FlyfishingUi.main(args);

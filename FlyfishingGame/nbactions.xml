@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
-        <action>
-            <actionName>CUSTOM-checkstyle</actionName>
-            <displayName>checkstyle</displayName>
+    <action>
+        <actionName>CUSTOM-checkstyle</actionName>
+        <displayName>checkstyle</displayName>
+        <goals>
+            <goal>jxr</goal>
+            <goal>checkstyle:checkstyle</goal>
+        </goals>
+    </action>
+    <action>
+        <actionName>CUSTOM-Checkstyle</actionName>
+        <displayName>Checkstyle</displayName>
+        <goals>
+            <goal>checkstyle:checkstyle</goal>
+        </goals>
+    </action>
+    <action>
+        <actionName>CUSTOM-testikattavuus</actionName>
+        <displayName>testikattavuus</displayName>
+        <goals>
+            <goal>jacoco:report</goal>
+        </goals>
+    </action>
+    <action>
+            <actionName>CUSTOM-JavaDoc</actionName>
+            <displayName>JavaDoc</displayName>
             <goals>
-                <goal>jxr</goal>
-                <goal>checkstyle:checkstyle</goal>
+                <goal>mvn</goal>
+                <goal>javadoc:javadoc</goal>
             </goals>
         </action>
-        <action>
-            <actionName>CUSTOM-Checkstyle</actionName>
-            <displayName>Checkstyle</displayName>
-            <goals>
-                <goal>checkstyle:checkstyle</goal>
-            </goals>
-        </action>
-        <action>
-            <actionName>CUSTOM-testikattavuus</actionName>
-            <displayName>testikattavuus</displayName>
-            <goals>
-                <goal>jacoco:report</goal>
-            </goals>
-        </action>
-    </actions>
+</actions>
