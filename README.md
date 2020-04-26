@@ -12,24 +12,52 @@ Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suor
 
 [Arkkitehtuurikuvaus](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Asennusohje](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/asennusohje.md)
+
 [Työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 ## Releaset
 
 [Viikko 5](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko5)
 
+[Viikko 6](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko6)
+
 ## Komentorivitoiminnot
 
 ### Testaaminen
 
-- Testit suoritetaan komennolla _mvn test_.
-- Testikattavuusraportti luodaan komennolla _mvn jacoco:report_.
-  (Sitä voi tarkastella selaimessa avaamalla tiedosto _target/site/jacoco/index.html_).
+Testit suoritetaan komennolla:
+
+    mvn test
+    
+Testikattavuusraportti luodaan komennolla:
+
+    mvn jacoco:report
+          
+(Sitä voi tarkastella selaimessa avaamalla tiedosto _target/site/jacoco/index.html_.)
 
 ## Suoritettavan jarin generointi
 
-- Komennolla _mvn package_ hakemistoon target generoituu suoritettava jar-tiedosto nimeltä _FlyfishingGame-1.0-SNAPSHOT.jar_.
+Komennolla: 
+
+    _mvn package_
+    
+hakemistoon target generoituu suoritettava jar-tiedosto nimeltä _FlyfishingGame-1.0-SNAPSHOT.jar_.
 
 ## Checkstyle
-- Checkstyle tarkistukset onnistuvat komennolla _mvn jxr:jxr checkstyle:checkstyle_ ja tuloksia voi tarkastella avaamalla tiedoston _target/site/checkstyle.html_ selaimessa.
+
+Checkstyle tarkistukset onnistuvat komennolla:
+
+    mvn jxr:jxr checkstyle:checkstyle
+  
+ja tuloksia voi tarkastella avaamalla tiedoston _target/site/checkstyle.html_ selaimessa.
+
+## JavaDoc
+
+JavaDoc:in saa generoitua komennolla:
+
+    mvn javadoc:javadoc
+
+Tuloksia voi tarkastella selaimessa avaamalla tiedoston _target/site/apidocs/index.html_.
+
 
