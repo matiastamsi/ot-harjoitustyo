@@ -12,4 +12,4 @@
 | 25.04. | 9 | Sain vietyä pelin loppuun sille tasolle, että kaikki toimii mitä tulee pelaamiseen. Hieno säädettävää on vielä karsiessa copy paste - koodi minimiin sekä eriyttää javafx:n komponentit pois muista luokista kuin ui:sta. Lisäksi tein testit sekä korjasin checkstyle virheet. |
 | 26.04 | 3 | Tein viikolle kuusi vaaditut tavoitteet loppuun (mm. dokumentaatioon käyttöohjeen, laajensin arkkitehtuurikuvausta, asetin javadoc:in toimimaan kunnolla yms. |
 
-Yht. 67 h
+Yht. 64 h
