@@ -23,16 +23,16 @@ Sovelluksella on vain yksi käyttäjärooli eli pelaaja.
 	- lehtiä :heavy_check_mark:
 	- vapa :heavy_check_mark:
 - käyttäjä voi vaihtaa kalastuspaikkaa. :heavy_check_mark:
-- heitellä perhoa minne haluaa.
-- napata kalan kun kala syö.
+- heitellä perhoa minne haluaa. :heavy_check_mark:
+- napata kalan kun kala syö. :heavy_check_mark:
 - pelinäkymässä näkyy pelikerran pisteet, :heavy_check_mark:
-- ... jotka kasvavat saaliin painon mukaan.
-- pisteet tallentuvat, jos pääsee TOP 5 -joukkoon.
-- laidassa näkyy TOP 5 (pelaajan nimimerkki ja pisteet).
+- ... jotka kasvavat saaliin pituuden mukaan. :heavy_check_mark:
+- pisteet tallentuvat. :heavy_check_mark:
+- laidassa näkyy TOP 5 (pelaajan nimimerkki ja pisteet). :heavy_check_mark:
 
 ## Jatkokehitysideoita
 
 Perusversiota jatkokehitetään ajansalliessa mm.
-- joki ja toiminnallisuudet näyttävät mahdollisimman aidolta.
-- kalat sijoittuvat varsinkin paikkoihin, jotka vastaavat luonnollista tapaa (kivien muodostamiin virtauksiin).
-- tehokkuus ja toimintavarmuus.
+- joki ja toiminnallisuudet näyttävät mahdollisimman aidolta. :heavy_check_mark: (siihen ainakin pyritty)
+- kalat sijoittuvat varsinkin paikkoihin, jotka vastaavat luonnollista tapaa (kivien muodostamiin virtauksiin). :heavy_check_mark:
+- tehokkuus ja toimintavarmuus. :heavy_check_mark:
