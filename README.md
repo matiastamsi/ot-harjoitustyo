@@ -12,7 +12,7 @@ Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suor
 
 [Arkkitehtuurikuvaus](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[Asennusohje](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/asennusohje.md)
+[Käyttöohje](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/käyttöohje.md)
 
 [Työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
