@@ -10,9 +10,7 @@
 
 ## Sekvenssikaaviot
 
-### Pelin aloitus ja paikan vaihto
-
-![sekvenssikaavio pelin aloittamisesta](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio_pelin_aloitus.png)
+![sekvenssikaavio pelin kulusta](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio.png)
 
 ## Tiedontallennus
 
