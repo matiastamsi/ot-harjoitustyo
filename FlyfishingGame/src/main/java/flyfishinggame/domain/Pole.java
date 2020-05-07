@@ -26,6 +26,10 @@ public class Pole {
         this.pole = new Polygon(0, 0,
                 -length / 100, -length / 7,
                 -length / 100, -1 * length,
+                -3*length / 100, -1 * length,
+                -3*length / 100, -1 * length + length / 100,
+                 length / 110, -1 * length + length / 100,
+                 length / 110, -1 * length,
                 -2 * length / 100, -1 * length,
                 -2 * length / 100, -length / 7,
                 -3 * length / 100, 0);

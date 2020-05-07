@@ -3,10 +3,10 @@ package flyfishinggame.domain;
 import static flyfishinggame.ui.FlyfishingUi.HEIGHT;
 import static flyfishinggame.ui.FlyfishingUi.WIDTH;
 import static flyfishinggame.ui.FlyfishingUi.poleLength;
-import static flyfishinggame.ui.FlyfishingUi.pane;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javafx.scene.layout.Pane;
 
 /**
  * The class to represent the line. It is created from points of line to make it
@@ -44,7 +44,7 @@ public class Line {
     /**
      * Method to clear line out of the sight.
      */
-    public void clear() {
+    public void clear(Pane pane) {
         if (!line.isEmpty()) {
             line.forEach(point -> pane.getChildren().remove(point.getShapePolygon()));
             line.clear();
@@ -59,16 +59,16 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLine(double x, double y) {
+    public void throwLine(double x, double y, Pane pane) {
         this.j = x;
         this.point = null;
         this.thinLine = 0.5;
         this.thickLine = 1.5;
 
         if (y > HEIGHT - poleLength) {
-            throwLineUnderTheTip(x, y);
+            throwLineUnderTheTip(x, y, pane);
         } else {
-            throwLineOverTheTip(x, y);
+            throwLineOverTheTip(x, y, pane);
         }
         this.wave = new Wave(x, y, HEIGHT / 50); //Add a wave.
         pane.getChildren().add(wave.getShapePolygon());
@@ -81,13 +81,13 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLineOverTheTip(double x, double y) {
+    public void throwLineOverTheTip(double x, double y, Pane pane) {
         if (x < WIDTH / 5) {
-            throwLineOverTheTipAndLeft(x, y);
+            throwLineOverTheTipAndLeft(x, y, pane);
         } else if (x == WIDTH / 5) {
-            throwLineOverTheTipAndForward(x, y);
+            throwLineOverTheTipAndForward(x, y, pane);
         } else {
-            throwLineOverTheTipAndRight(x, y);
+            throwLineOverTheTipAndRight(x, y, pane);
         }
     }
     
@@ -98,7 +98,7 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLineOverTheTipAndLeft(double x, double y) {
+    public void throwLineOverTheTipAndLeft(double x, double y, Pane pane) {
         for (double i = y; i < HEIGHT - poleLength; i += 0.2) {
             if (line.size() < poleLength) {
                 point = new PartOfTheLine(j, i, thinLine);
@@ -120,7 +120,7 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLineOverTheTipAndForward(double x, double y) {
+    public void throwLineOverTheTipAndForward(double x, double y, Pane pane) {
         for (double i = y; i < HEIGHT - poleLength; i += 0.2) {
             if (line.size() < poleLength * 2) {
                 point = new PartOfTheLine(x, i, thinLine);
@@ -140,7 +140,7 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLineOverTheTipAndRight(double x, double y) {
+    public void throwLineOverTheTipAndRight(double x, double y, Pane pane) {
         for (double i = y; i < HEIGHT - poleLength; i += 0.2) {
             if (line.size() < poleLength) {
 
@@ -166,13 +166,13 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLineUnderTheTip(double x, double y) {
+    public void throwLineUnderTheTip(double x, double y, Pane pane) {
         if (x < WIDTH / 5) {
-            throwLineUnderTheTipAndLeft(x, y);
+            throwLineUnderTheTipAndLeft(x, y, pane);
         } else if (x == WIDTH / 5) {
-            throwLineUnderTheTipAndForward(x, y);
+            throwLineUnderTheTipAndForward(x, y, pane);
         } else {
-            throwLineUnderTheTipAndRight(x, y);
+            throwLineUnderTheTipAndRight(x, y, pane);
         }
     }
     /**
@@ -182,7 +182,7 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLineUnderTheTipAndLeft(double x, double y) {
+    public void throwLineUnderTheTipAndLeft(double x, double y, Pane pane) {
         for (double i = y; i > HEIGHT - poleLength; i = i - 0.2) {
             if (line.size() < poleLength * 2) {
                 point = new PartOfTheLine(j, i, thinLine);
@@ -204,7 +204,7 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLineUnderTheTipAndForward(double x, double y) {
+    public void throwLineUnderTheTipAndForward(double x, double y, Pane pane) {
         for (double i = y; i > HEIGHT - poleLength; i = i - 0.2) {
             if (line.size() < poleLength * 2) {
                 point = new PartOfTheLine(x, i, thinLine);
@@ -224,7 +224,7 @@ public class Line {
      * @param x coordinate
      * @param y coordinate
      */
-    public void throwLineUnderTheTipAndRight(double x, double y) {
+    public void throwLineUnderTheTipAndRight(double x, double y, Pane pane) {
         for (double i = y; i > HEIGHT - poleLength; i = i - 0.2) {
             if (line.size() < poleLength) {
                 point = new PartOfTheLine(j, i, thinLine);
@@ -247,7 +247,7 @@ public class Line {
      *
      * @param speed The speed of the flow.
      */
-    public void moveTheLine(double speed) {
+    public void moveTheLine(double speed, Pane pane) {
         if (Math.random() < 0.4) {
             pane.getChildren().remove(wave.getShapePolygon());
             this.wave = new Wave(line.get(0).getX() + wave.getSize() / 2, line.get(0).getY() + wave.getSize() / 2, 5 + new Random().nextInt(5));

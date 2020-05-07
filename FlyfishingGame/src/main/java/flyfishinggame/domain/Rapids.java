@@ -3,10 +3,9 @@ package flyfishinggame.domain;
 import static flyfishinggame.ui.FlyfishingUi.HEIGHT;
 import static flyfishinggame.ui.FlyfishingUi.WIDTH;
 import static flyfishinggame.ui.FlyfishingUi.poleLength;
-import static flyfishinggame.ui.FlyfishingUi.pane;
-import static flyfishinggame.ui.FlyfishingUi.line;
 import java.util.*;
 import javafx.animation.AnimationTimer;
+import javafx.scene.layout.Pane;
 
 /**
  * The class to represent rapids.
@@ -49,20 +48,20 @@ public class Rapids {
     /**
      * This method keeps the water and other particles moving and "alive".
      */
-    public void flow() {
+    public void flow(Line line, Pane pane) {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
                 if (line.hitsRock(rocks)) {
-                    line.clear();
+                    line.clear(pane);
                 }
                 if (line.line.size() > 0) {
-                    line.moveTheLine(speed);
-                    checkIfFishBites();
+                    line.moveTheLine(speed, pane);
+                    checkIfFishBites(line, pane);
                     if (line.line.get(0).getX() >= WIDTH
                             || (line.line.get(0).getY() < HEIGHT - poleLength + 1
                             && line.line.get(0).getY() > HEIGHT - poleLength - 1)) {
-                        line.clear();
+                        line.clear(pane);
                     }
                 }
                 if (!splashRings.isEmpty()) {
@@ -80,11 +79,11 @@ public class Rapids {
                     }
                 }
                 if (Math.random() < 0.05) {
-                    fadeAwayRings();
+                    fadeAwayRings(pane);
                 }
                 //Randomly set some of the fishes to jump (gives a hint to user).
                 if (Math.random() < 0.0005) {
-                    fishBite(fishes.get(r.nextInt(fishes.size() - 1)));
+                    fishBite(fishes.get(r.nextInt(fishes.size() - 1)), pane);
                 }
 
                 for (int i = 0; i < bubbles.length; i++) {
@@ -150,12 +149,12 @@ public class Rapids {
      * Method to create a new river sight in the beginning or when changing the
      * spot.
      */
-    public void createNewSight() {
+    public void createNewSight(Line line, Pane pane) {
         if (!rocks.isEmpty()) {
-            clear();
+            clear(line, pane);
             speed = 1 + r.nextDouble(); //Set new random speed for the rapid.
         }
-        createBubbles();
+        createBubbles(pane);
         for (int i = 0; i < 3; i++) { //Create the rest of the river objects.
             int positionX = 150 + r.nextInt(WIDTH);
             int positionY = 50 + r.nextInt(HEIGHT - 50);
@@ -228,8 +227,8 @@ public class Rapids {
     /**
      * Clear the pane and lists/arrays. Bubbles and rings can stay.
      */
-    public void clear() {
-        line.clear();
+    public void clear(Line line, Pane pane) {
+        line.clear(pane);
         rocks.forEach(rock -> pane.getChildren().remove(rock.getShapePolygon()));
         rocks.clear();
         fishes.forEach(fish -> pane.getChildren().remove(fish.getShapeCircle()));
@@ -249,7 +248,7 @@ public class Rapids {
     /**
      * Create bubbles to the sight (randomly).
      */
-    public void createBubbles() {
+    public void createBubbles(Pane pane) {
         for (int i = 0; i < 200; i++) {
             int positionX = r.nextInt(WIDTH);
             int positionY = 25 + r.nextInt(HEIGHT - 25);
@@ -283,11 +282,11 @@ public class Rapids {
      * Go through the fishes. If fly is on top of fish (and fish is not already
      * splashing) set fish hooked and call fishBite method.
      */
-    public void checkIfFishBites() {
+    public void checkIfFishBites(Line line, Pane pane) {
         fishes.forEach(fish -> {
             if (line.line.get(0).crashPolygonToCircle(fish) && splashRings.isEmpty()) {
                 fish.hooked(true);
-                fishBite(fish);
+                fishBite(fish, pane);
             }
         });
     }
@@ -297,7 +296,7 @@ public class Rapids {
      *
      * @param fish the fish that bites.
      */
-    public void fishBite(Fish fish) {
+    public void fishBite(Fish fish, Pane pane) {
         for (int i = 6; i > 1; i--) {
             int randomX = 20 + r.nextInt(5);
             int randomY = 20 + r.nextInt(5);
@@ -315,7 +314,7 @@ public class Rapids {
      * Method takes rings away from the splash rings. To make it seem more real,
      * it takes by turns big ring and small ring.
      */
-    public void fadeAwayRings() {
+    public void fadeAwayRings(Pane pane) {
         if (!splashRings.isEmpty()) {
             if (splashRings.size() == 1) {
                 for (Fish fish : fishes) {

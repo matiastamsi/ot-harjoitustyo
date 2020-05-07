@@ -7,7 +7,7 @@ import javafx.scene.shape.Circle;
  * The class to represent objects that moves in the river and are black and
  * circle shaped.
  *
- * @author tamsi
+ * @author Matias Tamsi
  */
 public class BlackCircle extends ObjectInTheRiver {
 

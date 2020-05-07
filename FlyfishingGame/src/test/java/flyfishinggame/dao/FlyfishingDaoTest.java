@@ -1,7 +1,6 @@
 package flyfishinggame.dao;
 
 import java.sql.SQLException;
-import java.io.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;

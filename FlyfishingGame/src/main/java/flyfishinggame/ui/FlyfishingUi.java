@@ -2,10 +2,9 @@ package flyfishinggame.ui;
 
 import flyfishinggame.domain.*;
 import flyfishinggame.dao.*;
+import java.io.FileInputStream;
 import java.sql.*;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Properties;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -23,9 +22,9 @@ import javafx.stage.Stage;
  */
 public class FlyfishingUi extends Application {
 
-    public static int WIDTH = 1920 / 2;
-    public static int HEIGHT = 1050 / 2;
-    public static int poleLength = WIDTH / 5;
+    public static int WIDTH;
+    public static int HEIGHT;
+    public static int poleLength;
     public static Pane pane;
     public static Stage stage;
     public static Scene scene;
@@ -39,6 +38,8 @@ public class FlyfishingUi extends Application {
     private Text topScores;
 
     public FlyfishingUi() throws SQLException {
+        init(); //Read configurations.
+        poleLength = WIDTH / 5;
         this.db = new FlyfishingDao();
         this.pane = new Pane();
         this.nicknameField = new TextField();
@@ -48,6 +49,20 @@ public class FlyfishingUi extends Application {
         this.rapids = new Rapids();
         this.line = new Line();
         this.topScores = null;
+    }
+
+    @Override
+    public void init() {
+        try {
+            Properties properties = new Properties();
+            properties.load(new FileInputStream("config.properties"));
+            WIDTH = Integer.valueOf(properties.getProperty("WIDTH"));
+            HEIGHT = Integer.valueOf(properties.getProperty("HEIGHT"));
+        } catch (Exception e) {
+            //Insert default values.
+            WIDTH = 960;
+            HEIGHT = 525;
+        }
     }
 
     @Override
@@ -100,25 +115,25 @@ public class FlyfishingUi extends Application {
             stage.setTitle("Flyfish!");
             stage.setScene(scene);
             stage.show();
-            rapids.flow();
+            rapids.flow(line, pane);
         });
 
         changeSpotButton.setOnAction((event) -> {
-            rapids.createNewSight();
+            rapids.createNewSight(line, pane);
         });
 
         /*Method is used to make new riversight when called
             in the start or when player decides to 
             change the spot.*/
-        rapids.createNewSight();
+        rapids.createNewSight(line, pane);
 
         pane.setOnMouseClicked((event) -> {
-            line.clear();
+            line.clear(pane);
             double x = event.getX();
             double y = event.getY();
-            line.throwLine(x, y);
+            line.throwLine(x, y, pane);
             if (line.hitsRock(rapids.getRocks())) {
-                line.clear();
+                line.clear(pane);
             }
         }
         );
