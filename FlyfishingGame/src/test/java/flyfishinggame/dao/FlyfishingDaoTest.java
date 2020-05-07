@@ -34,18 +34,37 @@ public class FlyfishingDaoTest {
 
     @Test
     public void addingScoreWorks() throws SQLException {
-        fD.addScore("Test", 1);
+        try {
+            fD.addScore("Test", 1);
+        } catch (SQLException e) {
+            fD = new FlyfishingDao();
+            fD.createDatabase();
+            fD.addScore("Test", 1);
+        }
     }
 
     @Test
     public void fetchingTheTopScoresWorks() throws SQLException {
-        fD.addScore("Test", 60);
-        fD.addScore("Test", 50);
-        fD.addScore("Test", 40);
-        fD.addScore("Test", 30);
-        fD.addScore("Test", 20);
-        fD.addScore("Test", 10);
-        String score = fD.getTopFive();
-        assertEquals(5, score.lines().count(), 0);
+        try {
+            fD.addScore("Test", 60);
+            fD.addScore("Test", 50);
+            fD.addScore("Test", 40);
+            fD.addScore("Test", 30);
+            fD.addScore("Test", 20);
+            fD.addScore("Test", 10);
+            String score = fD.getTopFive();
+            assertEquals(5, score.lines().count(), 0);
+        } catch (SQLException e) {
+            fD = new FlyfishingDao();
+            fD.createDatabase();
+            fD.addScore("Test", 60);
+            fD.addScore("Test", 50);
+            fD.addScore("Test", 40);
+            fD.addScore("Test", 30);
+            fD.addScore("Test", 20);
+            fD.addScore("Test", 10);
+            String score = fD.getTopFive();
+            assertEquals(5, score.lines().count(), 0);
+        }
     }
 }
