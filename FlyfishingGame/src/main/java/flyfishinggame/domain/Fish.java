@@ -21,7 +21,7 @@ public class Fish extends ObjectInTheRiver {
      * @param size the size of the fish.
      */
     public Fish(int x, int y, int size) {
-        super(new Circle(size, size, size, Color.BLUE), x, y, size);
+        super(new Circle(size, size, size, Color.WHITE), x, y, size);
         this.hookInMouth = false;
     }
 
