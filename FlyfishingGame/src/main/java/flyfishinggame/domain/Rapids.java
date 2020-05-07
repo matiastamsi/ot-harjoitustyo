@@ -3,6 +3,11 @@ package flyfishinggame.domain;
 import static flyfishinggame.ui.FlyfishingUi.HEIGHT;
 import static flyfishinggame.ui.FlyfishingUi.WIDTH;
 import static flyfishinggame.ui.FlyfishingUi.poleLength;
+import static flyfishinggame.ui.FlyfishingUi.bubbleSize;
+import static flyfishinggame.ui.FlyfishingUi.leafSize;
+import static flyfishinggame.ui.FlyfishingUi.rockSize;
+import static flyfishinggame.ui.FlyfishingUi.fishSize;
+import static flyfishinggame.ui.FlyfishingUi.speedRange;
 import java.util.*;
 import javafx.animation.AnimationTimer;
 import javafx.scene.layout.Pane;
@@ -25,7 +30,6 @@ public class Rapids {
     public List<Fish> fishes;
     public Pole pole;
     public double speed;
-    public int fishSize;
 
     /**
      * New rapids has list of rocks. Bubbles and leaves are stored in the
@@ -40,9 +44,8 @@ public class Rapids {
         this.bubbles = new Bubble[200];
         this.splashRings = new ArrayList<>();
         this.leaves = new Leaf[3];
-        this.pole = new Pole(poleLength + 2, HEIGHT, poleLength);
-        this.speed = 1 + r.nextDouble();
-        this.fishSize = 30;
+        this.pole = new Pole(poleLength, HEIGHT, poleLength);
+        this.speed = speedRange + r.nextDouble();
     }
 
     /**
@@ -95,7 +98,7 @@ public class Rapids {
                                 continue; //Not always three leaves in the sight.
                             } else {
                                 leaves[i] = new Leaf(0, 25 + r.nextInt(HEIGHT - 25),
-                                        r.nextDouble());
+                                        leafSize + r.nextDouble());
                                 pane.getChildren().add(leaves[i].getShapePolygon());
                             }
                         }
@@ -118,7 +121,7 @@ public class Rapids {
                             continue; //Not always 200 bubbles in the sight.
                         } else {
                             bubbles[i] = new Bubble(0, 25 + r.nextInt(HEIGHT - 25),
-                                    r.nextInt(5));
+                                    r.nextInt(bubbleSize));
                             pane.getChildren().add(bubbles[i].black.getShapeCircle());
                             pane.getChildren().add(bubbles[i].white.getShapeCircle());
                         }
@@ -152,13 +155,13 @@ public class Rapids {
     public void createNewSight(Line line, Pane pane) {
         if (!rocks.isEmpty()) {
             clear(line, pane);
-            speed = 1 + r.nextDouble(); //Set new random speed for the rapid.
+            speed = speedRange + r.nextDouble(); //Set new random speed for the rapid.
         }
         createBubbles(pane);
         for (int i = 0; i < 3; i++) { //Create the rest of the river objects.
             int positionX = 150 + r.nextInt(WIDTH);
             int positionY = 50 + r.nextInt(HEIGHT - 50);
-            double size = 40 + r.nextInt(20);
+            double size = 2 * rockSize + r.nextInt(rockSize);
             WhiteCircle area = new WhiteCircle((int) (positionX - size * 7 / 4),
                     (int) (positionY - size - 25),
                     (int) (size + 50));
@@ -188,21 +191,21 @@ public class Rapids {
             buffers.add(buffer3);
             pane.getChildren().add(buffer3.getShapeCircle());
             //Set one fish (per rock) on top flow of the rock.
-            Fish fish = new Fish(positionX + fishSize + r.nextInt(2 * fishSize),
-                    positionY + fishSize + r.nextInt(fishSize / 2),
-                    7 + r.nextInt(9));
+            Fish fish = new Fish(positionX + 2 * fishSize + r.nextInt(2 * fishSize),
+                    positionY + 2 * fishSize + r.nextInt(fishSize / 2),
+                    fishSize);
             fishes.add(fish);
             //Set one fish (per rock) on bottom flow of the rock.
-            Fish fish2 = new Fish(positionX + fishSize + r.nextInt(2 * fishSize),
-                    positionY - fishSize - r.nextInt(fishSize / 2),
-                    7 + r.nextInt(9));
+            Fish fish2 = new Fish(positionX + 2 * fishSize + r.nextInt(2 * fishSize),
+                    positionY - 2 * fishSize - r.nextInt(fishSize / 2),
+                    fishSize);
             fishes.add(fish2);
             //Set two fishes (per rock) into random places.
             Fish fish3 = new Fish(r.nextInt(WIDTH), r.nextInt(HEIGHT),
-                    7 + r.nextInt(9));
+                    fishSize);
             fishes.add(fish3);
             Fish fish4 = new Fish(r.nextInt(WIDTH), r.nextInt(HEIGHT),
-                    7 + r.nextInt(9));
+                    fishSize);
             fishes.add(fish4);
 
             Rock rock = new Rock(positionX, positionY, size);
@@ -210,7 +213,7 @@ public class Rapids {
 
             positionX = r.nextInt(WIDTH);
             positionY = 25 + r.nextInt(HEIGHT - 25);
-            size = r.nextDouble();
+            size = leafSize + r.nextDouble();
 
             Leaf leaf = new Leaf(positionX, positionY, size);
             leaves[i] = leaf;
@@ -252,7 +255,7 @@ public class Rapids {
         for (int i = 0; i < 200; i++) {
             int positionX = r.nextInt(WIDTH);
             int positionY = 25 + r.nextInt(HEIGHT - 25);
-            double size = r.nextInt(5);
+            double size = r.nextInt(bubbleSize);
             Bubble bubble = new Bubble(positionX, positionY, size);
             bubbles[i] = bubble;
             pane.getChildren().add(bubble.black.getShapeCircle());

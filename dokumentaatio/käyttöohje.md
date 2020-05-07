@@ -2,10 +2,17 @@
 
 ## Konfigurointi
 
-Ohjelma olettaa, että juurikansion config.properties-tiedostossa on määritettynä peli-ikkunan koko. Jos näin ei ole, ohjelma käyttää oletus kokoa. Esimerkiksi näillä arvoilla ikkunasta tulee noin näytön kokoinen.
+Ohjelma olettaa, että juurikansion config.properties-tiedostossa on määritettynä koot. Jos näin ei ole, ohjelma käyttää oletus kokoja. 
 
-    WIDTH = 1920
-    HEIGHT = 1050
+	WIDTH = 960
+	HEIGHT = 525
+	bubbleSize = 7
+	leafSize = 0
+	rockSize = 20
+	speedRange = 1
+	fishSize = 15
+	thinLineSize = 0.5
+	thickLineSize = 1.5
 
 ## Ohjelman käynnistäminen
 

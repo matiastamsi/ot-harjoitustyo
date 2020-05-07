@@ -25,6 +25,14 @@ public class FlyfishingUi extends Application {
     public static int WIDTH;
     public static int HEIGHT;
     public static int poleLength;
+    public static int bubbleSize;
+    public static int leafSize;
+    public static int rockSize;
+    public static int partOfTheLineSize;
+    public static int speedRange;
+    public static int fishSize;
+    public static double thinLineSize;
+    public static double thickLineSize;
     public static Pane pane;
     public static Stage stage;
     public static Scene scene;
@@ -58,10 +66,25 @@ public class FlyfishingUi extends Application {
             properties.load(new FileInputStream("config.properties"));
             WIDTH = Integer.valueOf(properties.getProperty("WIDTH"));
             HEIGHT = Integer.valueOf(properties.getProperty("HEIGHT"));
+            bubbleSize = Integer.valueOf(properties.getProperty("bubbleSize"));
+            leafSize = Integer.valueOf(properties.getProperty("leafSize"));
+            rockSize = Integer.valueOf(properties.getProperty("rockSize"));
+            speedRange = Integer.valueOf(properties.getProperty("speedRange"));
+            fishSize = Integer.valueOf(properties.getProperty("fishSize"));
+            thinLineSize = Double.valueOf(properties.getProperty("thinLineSize"));
+            thickLineSize = Double.valueOf(properties.getProperty("thickLineSize"));
         } catch (Exception e) {
             //Insert default values.
             WIDTH = 960;
             HEIGHT = 525;
+            bubbleSize = 7;
+            leafSize = 0; // + random double value.
+            rockSize = 20;
+            speedRange = 1; // + random double value.
+            fishSize = 15;
+            thinLineSize = 0.5;
+            thickLineSize = 1.5;
+            System.out.println("Default values taken into use.");
         }
     }
 

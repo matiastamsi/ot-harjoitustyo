@@ -3,6 +3,8 @@ package flyfishinggame.domain;
 import static flyfishinggame.ui.FlyfishingUi.HEIGHT;
 import static flyfishinggame.ui.FlyfishingUi.WIDTH;
 import static flyfishinggame.ui.FlyfishingUi.poleLength;
+import static flyfishinggame.ui.FlyfishingUi.thinLineSize;
+import static flyfishinggame.ui.FlyfishingUi.thickLineSize;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -62,8 +64,8 @@ public class Line {
     public void throwLine(double x, double y, Pane pane) {
         this.j = x;
         this.point = null;
-        this.thinLine = 0.5;
-        this.thickLine = 1.5;
+        this.thinLine = thinLineSize;
+        this.thickLine = thickLineSize;
 
         if (y > HEIGHT - poleLength) {
             throwLineUnderTheTip(x, y, pane);
