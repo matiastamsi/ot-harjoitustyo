@@ -1,5 +1,19 @@
 # Käyttöohje
 
+## Konfigurointi
+
+Ohjelma olettaa, että juurikansion config.properties-tiedostossa on määritettynä peli-ikkunan koko. Jos näin ei ole, ohjelma käyttää oletus kokoa. Esimerkiksi näillä arvoilla ikkunasta tulee noin näytön kokoinen.
+
+    WIDTH = 1920
+    HEIGHT = 1050
+
+## Ohjelman käynnistäminen
+
+Ohjelman saa käyntiin komennolla
+
+    java -jar flyfishinggame.jar
+
+
 ## Pelin aloitus
 
 Pelin alussa toivotetaan tervetulleeksi peliin sekä käydään hiukan läpi ohjeita. Lisäksi annetaan nimimerkki, jolla pelataan. 
