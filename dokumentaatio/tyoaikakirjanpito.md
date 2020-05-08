@@ -13,4 +13,4 @@
 | 26.04 | 3 | Tein viikolle kuusi vaaditut tavoitteet loppuun (mm. dokumentaatioon käyttöohjeen, laajensin arkkitehtuurikuvausta, asetin javadoc:in toimimaan kunnolla yms. |
 | 07.05 | 7 | Lähinnä hienosäätöä: kommentointia, koodin selkeyttämistä, dokumentaation täyttämistä. Lisäksi reagoimista vertaispalautteeseen. |
 | 08.05 | 7 | Sovellus saatu palautusvalmiiksi! |
-Yht. 78 h
+| Yht. | 78 h |
