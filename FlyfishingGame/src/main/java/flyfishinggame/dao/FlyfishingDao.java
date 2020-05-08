@@ -1,6 +1,5 @@
 package flyfishinggame.dao;
 
-import java.util.*;
 import java.sql.*;
 
 /**
@@ -24,7 +23,6 @@ public class FlyfishingDao {
         this.db = DriverManager.getConnection(
                 "jdbc:sqlite:flyfishinggamescores.db");
         this.s = db.createStatement();
-        db.createStatement().execute("PRAGMA foreign_keys = ON");
     }
 
     /**
@@ -71,10 +69,12 @@ public class FlyfishingDao {
     public String getTopFive() throws SQLException {
         String scores = "";
         int i = 1;
-        PreparedStatement p = db.prepareStatement("SELECT * FROM Scores ORDER BY score DESC LIMIT 5");
+        PreparedStatement p = db.prepareStatement(
+                "SELECT * FROM Scores ORDER BY score DESC LIMIT 5");
         ResultSet r = p.executeQuery();
         while (r.next()) {
-            scores += i + ". " + r.getInt("score") + ", " + r.getString("nickname") + "\n";
+            scores += i + ". " + r.getInt("score") + ", " 
+                    + r.getString("nickname") + "\n";
             i++;
         }
         return scores;

@@ -2,7 +2,6 @@ package flyfishinggame.domain;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-
 /**
  * The class to represent objects that moves in the river and are black and
  * circle shaped.
@@ -10,7 +9,6 @@ import javafx.scene.shape.Circle;
  * @author Matias Tamsi
  */
 public class BlackCircle extends ObjectInTheRiver {
-
     /**
      * The object gets coordinates and size. Also, the colour is defined as
      * black.

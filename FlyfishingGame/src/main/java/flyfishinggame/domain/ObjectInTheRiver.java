@@ -251,9 +251,11 @@ public abstract class ObjectInTheRiver {
      */
     public void movePolygonDown(double speed) {
         this.x = this.shape.getTranslateX() + speed + this.movement.getX();
-        this.shape.setTranslateX(this.shape.getTranslateX() + speed + this.movement.getX());
+        this.shape.setTranslateX(
+                this.shape.getTranslateX() + speed + this.movement.getX());
         this.y = this.shape.getTranslateY() + speed + this.movement.getY();
-        this.shape.setTranslateY(this.shape.getTranslateY() + speed + this.movement.getY());
+        this.shape.setTranslateY(
+                this.shape.getTranslateY() + speed + this.movement.getY());
     }
 
     /**
@@ -263,8 +265,10 @@ public abstract class ObjectInTheRiver {
      */
     public void movePolygonUp(double speed) {
         this.x = this.shape.getTranslateX() + speed + this.movement.getX();
-        this.shape.setTranslateX(this.shape.getTranslateX() + speed + this.movement.getX());
+        this.shape.setTranslateX(
+                this.shape.getTranslateX() + speed + this.movement.getX());
         this.y = this.shape.getTranslateY() - speed - this.movement.getY();
-        this.shape.setTranslateY(this.shape.getTranslateY() - speed - this.movement.getY());
+        this.shape.setTranslateY(
+                this.shape.getTranslateY() - speed - this.movement.getY());
     }
 }

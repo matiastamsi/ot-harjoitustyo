@@ -13,7 +13,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.layout.Pane;
 
 /**
- * The class to represent rapids.
+ * The class to represent the rapids.
  *
  * @author Matias Tamsi
  */
@@ -44,12 +44,15 @@ public class Rapids {
         this.bubbles = new Bubble[200];
         this.splashRings = new ArrayList<>();
         this.leaves = new Leaf[3];
-        this.pole = new Pole(poleLength, HEIGHT, poleLength);
+        this.pole = new Pole(poleLength + poleLength / 50, HEIGHT, poleLength);
         this.speed = speedRange + r.nextDouble();
     }
 
     /**
      * This method keeps the water and other particles moving and "alive".
+     * 
+     * @param line the line of the UI.
+     * @param pane the pane of the UI.
      */
     public void flow(Line line, Pane pane) {
         new AnimationTimer() {
@@ -136,6 +139,10 @@ public class Rapids {
                             bubbles[i].white.moveCircleAside(buffers.get(j));
                         }
                     }
+                    //Bubbles pop randomly and new ones emerge.
+                    if (Math.random() < 0.0001) {
+                        replaceBubble(pane);
+                    }
                 }
                 /*Add the pole constantly on the sight
                 to make it seem to be on top of other objects*/
@@ -151,11 +158,14 @@ public class Rapids {
     /**
      * Method to create a new river sight in the beginning or when changing the
      * spot.
+     * 
+     * @param line the line of the UI.
+     * @param pane the pane of the UI.
      */
     public void createNewSight(Line line, Pane pane) {
         if (!rocks.isEmpty()) {
             clear(line, pane);
-            speed = speedRange + r.nextDouble(); //Set new random speed for the rapid.
+            speed = speedRange + r.nextDouble(); //Set new random speed.
         }
         createBubbles(pane);
         for (int i = 0; i < 3; i++) { //Create the rest of the river objects.
@@ -193,19 +203,19 @@ public class Rapids {
             //Set one fish (per rock) on top flow of the rock.
             Fish fish = new Fish(positionX + 2 * fishSize + r.nextInt(2 * fishSize),
                     positionY + 2 * fishSize + r.nextInt(fishSize / 2),
-                    fishSize);
+                    r.nextInt(fishSize));
             fishes.add(fish);
             //Set one fish (per rock) on bottom flow of the rock.
             Fish fish2 = new Fish(positionX + 2 * fishSize + r.nextInt(2 * fishSize),
                     positionY - 2 * fishSize - r.nextInt(fishSize / 2),
-                    fishSize);
+                    r.nextInt(fishSize));
             fishes.add(fish2);
             //Set two fishes (per rock) into random places.
             Fish fish3 = new Fish(r.nextInt(WIDTH), r.nextInt(HEIGHT),
-                    fishSize);
+                    r.nextInt(fishSize));
             fishes.add(fish3);
             Fish fish4 = new Fish(r.nextInt(WIDTH), r.nextInt(HEIGHT),
-                    fishSize);
+                    r.nextInt(fishSize));
             fishes.add(fish4);
 
             Rock rock = new Rock(positionX, positionY, size);
@@ -229,6 +239,9 @@ public class Rapids {
 
     /**
      * Clear the pane and lists/arrays. Bubbles and rings can stay.
+     * 
+     * @param line the line of the UI.
+     * @param pane the pane of the UI.
      */
     public void clear(Line line, Pane pane) {
         line.clear(pane);
@@ -250,6 +263,8 @@ public class Rapids {
 
     /**
      * Create bubbles to the sight (randomly).
+     * 
+     * @param pane the pane of the UI.
      */
     public void createBubbles(Pane pane) {
         for (int i = 0; i < 200; i++) {
@@ -258,6 +273,29 @@ public class Rapids {
             double size = r.nextInt(bubbleSize);
             Bubble bubble = new Bubble(positionX, positionY, size);
             bubbles[i] = bubble;
+            pane.getChildren().add(bubble.black.getShapeCircle());
+            pane.getChildren().add(bubble.white.getShapeCircle());
+        }
+    }
+    
+    /**
+     * Method removes a random bubble and makes a new one
+     * to random coordinates (not on top of a rock).
+     * 
+     * @param pane the pane of the UI.
+     */
+    public void replaceBubble(Pane pane) {
+        int a = r.nextInt(200);
+        pane.getChildren().remove(bubbles[a].black.getShapeCircle());
+        pane.getChildren().remove(bubbles[a].white.getShapeCircle());
+        int positionX = r.nextInt(WIDTH);
+        int positionY = 25 + r.nextInt(HEIGHT - 25);
+        double size = r.nextInt(bubbleSize);
+        Bubble bubble = new Bubble(positionX, positionY, size);
+        if (!rocks.get(0).crashPolygonToCircle(bubble.black)
+                || !rocks.get(1).crashPolygonToCircle(bubble.black)
+                || !rocks.get(2).crashPolygonToCircle(bubble.black)) {
+            bubbles[a] = bubble;
             pane.getChildren().add(bubble.black.getShapeCircle());
             pane.getChildren().add(bubble.white.getShapeCircle());
         }
@@ -284,6 +322,9 @@ public class Rapids {
     /**
      * Go through the fishes. If fly is on top of fish (and fish is not already
      * splashing) set fish hooked and call fishBite method.
+     * 
+     * @param line the line of the UI.
+     * @param pane the pane of the UI.
      */
     public void checkIfFishBites(Line line, Pane pane) {
         fishes.forEach(fish -> {
@@ -298,6 +339,7 @@ public class Rapids {
      * Method creates rings to represent splashing that eating fish creates.
      *
      * @param fish the fish that bites.
+     * @param pane the pane of the UI.
      */
     public void fishBite(Fish fish, Pane pane) {
         for (int i = 6; i > 1; i--) {
@@ -316,6 +358,8 @@ public class Rapids {
     /**
      * Method takes rings away from the splash rings. To make it seem more real,
      * it takes by turns big ring and small ring.
+     * 
+     * @param pane the pane of the UI.
      */
     public void fadeAwayRings(Pane pane) {
         if (!splashRings.isEmpty()) {

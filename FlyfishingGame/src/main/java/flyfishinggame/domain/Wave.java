@@ -27,6 +27,7 @@ public class Wave extends ObjectInTheRiver {
      * @param angle The value that defines how much to rotate.
      */
     public void rotateWave(double angle) {
-        super.getShapePolygon().setRotate(super.getShapePolygon().getRotate() + angle);
+        super.getShapePolygon().setRotate(
+                super.getShapePolygon().getRotate() + angle);
     }
 }

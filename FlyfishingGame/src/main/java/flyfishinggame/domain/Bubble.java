@@ -1,9 +1,7 @@
 package flyfishinggame.domain;
 
-import java.util.Random;
-
 /**
- * The class to represent bubble in the river.
+ * The class to represent a bubble in the river.
  *
  * @author tamsi
  */

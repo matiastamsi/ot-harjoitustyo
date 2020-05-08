@@ -11,8 +11,8 @@ import java.util.Random;
 import javafx.scene.layout.Pane;
 
 /**
- * The class to represent the line. It is created from points of line to make it
- * seem real in the rapid.
+ * The class to represent the line. It is created of points of the line to make it
+ * seem real in the rapids.
  *
  * @author Matias Tamsi
  */
@@ -27,7 +27,7 @@ public class Line {
 
     /**
      * Method to tell if line touches a rock. Because there is so many parts of
-     * line to check, let us check only every hundred.
+     * line to check, let us check only every hundred due to efficiency.
      *
      * @param rocks list of rapid's rocks
      * @return true: touches, false: not
@@ -45,10 +45,13 @@ public class Line {
 
     /**
      * Method to clear line out of the sight.
+     * 
+     * @param pane The pane of the UI.
      */
     public void clear(Pane pane) {
         if (!line.isEmpty()) {
-            line.forEach(point -> pane.getChildren().remove(point.getShapePolygon()));
+            line.forEach(point -> 
+                    pane.getChildren().remove(point.getShapePolygon()));
             line.clear();
             pane.getChildren().remove(wave.getShapePolygon());
         }
@@ -60,6 +63,7 @@ public class Line {
      *
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLine(double x, double y, Pane pane) {
         this.j = x;
@@ -82,6 +86,7 @@ public class Line {
      *
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLineOverTheTip(double x, double y, Pane pane) {
         if (x < WIDTH / 5) {
@@ -99,6 +104,7 @@ public class Line {
      * 
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLineOverTheTipAndLeft(double x, double y, Pane pane) {
         for (double i = y; i < HEIGHT - poleLength; i += 0.2) {
@@ -121,6 +127,7 @@ public class Line {
      * 
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLineOverTheTipAndForward(double x, double y, Pane pane) {
         for (double i = y; i < HEIGHT - poleLength; i += 0.2) {
@@ -141,6 +148,7 @@ public class Line {
      * 
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLineOverTheTipAndRight(double x, double y, Pane pane) {
         for (double i = y; i < HEIGHT - poleLength; i += 0.2) {
@@ -167,6 +175,7 @@ public class Line {
      *
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLineUnderTheTip(double x, double y, Pane pane) {
         if (x < WIDTH / 5) {
@@ -183,6 +192,7 @@ public class Line {
      * 
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLineUnderTheTipAndLeft(double x, double y, Pane pane) {
         for (double i = y; i > HEIGHT - poleLength; i = i - 0.2) {
@@ -205,6 +215,7 @@ public class Line {
      * 
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLineUnderTheTipAndForward(double x, double y, Pane pane) {
         for (double i = y; i > HEIGHT - poleLength; i = i - 0.2) {
@@ -225,6 +236,7 @@ public class Line {
      * 
      * @param x coordinate
      * @param y coordinate
+     * @param pane The pane of the UI.
      */
     public void throwLineUnderTheTipAndRight(double x, double y, Pane pane) {
         for (double i = y; i > HEIGHT - poleLength; i = i - 0.2) {
@@ -248,6 +260,7 @@ public class Line {
      * is "shaking" to make it more real looking.
      *
      * @param speed The speed of the flow.
+     * @param pane The pane of the UI.
      */
     public void moveTheLine(double speed, Pane pane) {
         if (Math.random() < 0.4) {

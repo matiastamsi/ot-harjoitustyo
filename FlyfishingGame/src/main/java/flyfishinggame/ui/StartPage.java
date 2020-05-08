@@ -16,10 +16,9 @@ import javafx.scene.text.Font;
  * Class creates the start page. Player reads the instructions and gives a
  * nickname as a player.
  *
- * @author tamsi
+ * @author Matias Tamsi
  */
 public class StartPage {
-
     /**
      * Start page is formed by calling this method.
      */

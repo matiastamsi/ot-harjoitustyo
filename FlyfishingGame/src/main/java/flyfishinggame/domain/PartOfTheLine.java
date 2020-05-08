@@ -4,7 +4,7 @@ import javafx.scene.shape.Polygon;
 
 /**
  * The class to represent one point of the line. This is how the smooth
- * "real-looking" line's movement is made.
+ * "real-looking" line's movement is been made.
  *
  * @author Matias Tamsi
  */
@@ -20,6 +20,5 @@ public class PartOfTheLine extends ObjectInTheRiver {
      */
     public PartOfTheLine(double x, double y, double size) {
         super(new Polygon(0, 0, 0, size, size, size, size, 0), x, y, size);
-
     }
 }

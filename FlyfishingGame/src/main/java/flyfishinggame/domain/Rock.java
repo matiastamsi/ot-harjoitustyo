@@ -1,13 +1,12 @@
 package flyfishinggame.domain;
 
 /**
- * Class to represent rocks in the rapids.
+ * Class to represent a rock in the rapids.
  *
  * @author Matias Tamsi
  */
 public class Rock extends ObjectInTheRiver {
 
-    private double size;
     private int x;
     private int y;
 

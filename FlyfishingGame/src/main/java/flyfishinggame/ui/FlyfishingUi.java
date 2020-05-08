@@ -16,7 +16,9 @@ import javafx.stage.Stage;
 /**
  * The user interface for the app. First show the start page, which tells a
  * about the game and asks player's nickname. When the player presses the start
- * button, the start page changes to the actual gaming sight.
+ * button, the start page changes to the actual gaming sight. Spot can be
+ * changed by pressing the changeButton. If player catches a fish, show a page
+ * where is points of the catch etc.
  *
  * @author Matias Tamsi
  */
@@ -84,7 +86,7 @@ public class FlyfishingUi extends Application {
             fishSize = 15;
             thinLineSize = 0.5;
             thickLineSize = 1.5;
-            System.out.println("Default values taken into use.");
+            System.out.println("Default values are taken into use.");
         }
     }
 
@@ -134,7 +136,8 @@ public class FlyfishingUi extends Application {
         the startpage changes to the actual gaming sight.*/
         startButton.setOnAction((event) -> {
             nickname = nicknameField.getText();
-            borderpane.getChildren().add(new Text(WIDTH - 150, 15, "Playing as: " + nickname));
+            borderpane.getChildren().add(new Text(WIDTH - 150, 15,
+                    "Playing as: " + nickname));
             stage.setTitle("Flyfish!");
             stage.setScene(scene);
             stage.show();
@@ -166,12 +169,14 @@ public class FlyfishingUi extends Application {
             KeyCode keyCode = ke.getCode();
             if (keyCode.equals(KeyCode.C)) {
                 for (Fish fish : rapids.getFishes()) {
-                    if (fish.isHooked() == true) {
+                    if (fish.isHooked()) {
                         BorderPane fishCatched = new BorderPane();
                         fishCatched.setPrefSize(WIDTH, HEIGHT);
                         Label textForFisher = new Label("\n"
-                                + "             Awesome! You got a " + ((int) fish.getSize()) * 5 + " cm trout!"
-                                + "\n                   You earned " + ((int) fish.getSize()) * 5 + " points!"
+                                + "             Awesome! You got a "
+                                + ((int) fish.getSize()) * 5 + " cm trout!"
+                                + "\n                   You earned " 
+                                + ((int) fish.getSize()) * 5 + " points!"
                                 + " \n"
                                 + " \n"
                                 + " \n"
@@ -209,7 +214,6 @@ public class FlyfishingUi extends Application {
             stage.setScene(scene);
             stage.show();
         });
-
     }
 
     public static void main(String[] args) {
