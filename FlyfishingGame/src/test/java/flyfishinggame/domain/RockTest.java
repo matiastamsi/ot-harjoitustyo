@@ -5,8 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * Test rock object.
  *
- * @author tamsi
+ * @author Matias Tamsi
  */
 public class RockTest {
 

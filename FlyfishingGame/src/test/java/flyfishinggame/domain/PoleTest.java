@@ -5,8 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- *
- * @author tamsi
+ * Test pole.
+ * 
+ * @author Matias Tamsi
  */
 public class PoleTest {
 

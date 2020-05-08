@@ -5,8 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author tamsi
+ * Test leaf.
+ * 
+ * @author Matias Tamsi
  */
 public class LeafTest {
 

@@ -1,16 +1,13 @@
 package flyfishinggame.domain;
 
 import javafx.scene.shape.Polygon;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author tamsi
+ * Test rock factory's functionality.
+ * 
+ * @author Matias Tamsi
  */
 public class RockFactoryTest {
 

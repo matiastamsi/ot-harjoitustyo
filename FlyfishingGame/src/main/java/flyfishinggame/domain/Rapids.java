@@ -20,7 +20,7 @@ import javafx.scene.layout.Pane;
 public class Rapids {
 
     static boolean onTopOfAnother = false;
-    private Random r = new Random();
+    public Random r = new Random();
     public List<Rock> rocks;
     public List<WhiteCircle> buffers;
     public List<WhiteCircle> takenAreas;
@@ -50,7 +50,7 @@ public class Rapids {
 
     /**
      * This method keeps the water and other particles moving and "alive".
-     * 
+     *
      * @param line the line of the UI.
      * @param pane the pane of the UI.
      */
@@ -158,7 +158,7 @@ public class Rapids {
     /**
      * Method to create a new river sight in the beginning or when changing the
      * spot.
-     * 
+     *
      * @param line the line of the UI.
      * @param pane the pane of the UI.
      */
@@ -239,7 +239,7 @@ public class Rapids {
 
     /**
      * Clear the pane and lists/arrays. Bubbles and rings can stay.
-     * 
+     *
      * @param line the line of the UI.
      * @param pane the pane of the UI.
      */
@@ -263,7 +263,7 @@ public class Rapids {
 
     /**
      * Create bubbles to the sight (randomly).
-     * 
+     *
      * @param pane the pane of the UI.
      */
     public void createBubbles(Pane pane) {
@@ -277,11 +277,11 @@ public class Rapids {
             pane.getChildren().add(bubble.white.getShapeCircle());
         }
     }
-    
+
     /**
-     * Method removes a random bubble and makes a new one
-     * to random coordinates (not on top of a rock).
-     * 
+     * Method removes a random bubble and makes a new one to random coordinates
+     * (not on top of a rock).
+     *
      * @param pane the pane of the UI.
      */
     public void replaceBubble(Pane pane) {
@@ -322,7 +322,7 @@ public class Rapids {
     /**
      * Go through the fishes. If fly is on top of fish (and fish is not already
      * splashing) set fish hooked and call fishBite method.
-     * 
+     *
      * @param line the line of the UI.
      * @param pane the pane of the UI.
      */
@@ -358,7 +358,7 @@ public class Rapids {
     /**
      * Method takes rings away from the splash rings. To make it seem more real,
      * it takes by turns big ring and small ring.
-     * 
+     *
      * @param pane the pane of the UI.
      */
     public void fadeAwayRings(Pane pane) {

@@ -5,8 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author tamsi
+ * Test fish.
+ * 
+ * @author Matias Tamsi
  */
 public class FishTest {
     

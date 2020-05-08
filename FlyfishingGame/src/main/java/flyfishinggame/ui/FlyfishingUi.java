@@ -43,7 +43,7 @@ public class FlyfishingUi extends Application {
     public static Line line;
     private String nickname;
     private int points;
-    private Rapids rapids;
+    public Rapids rapids;
     private FlyfishingDao db;
     private Text topScores;
 

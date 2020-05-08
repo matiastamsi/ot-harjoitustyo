@@ -3,8 +3,8 @@ package flyfishinggame.domain;
 import javafx.scene.shape.Polygon;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 /**
+ * Test wave object.
  *
  * @author Matias Tamsi
  */

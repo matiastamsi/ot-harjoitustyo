@@ -1,11 +1,10 @@
 package flyfishinggame.domain;
 
-import javafx.geometry.Point2D;
-import javafx.scene.paint.Color;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * Test class.
  *
  * @author Matias Tamsi
  */
