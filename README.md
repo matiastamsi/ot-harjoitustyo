@@ -40,7 +40,7 @@ Testikattavuusraportti luodaan komennolla:
 
 Komennolla: 
 
-    _mvn package_
+    mvn package
     
 hakemistoon target generoituu suoritettava jar-tiedosto nimeltä _FlyfishingGame-1.0-SNAPSHOT.jar_.
 
