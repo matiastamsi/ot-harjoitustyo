@@ -11,8 +11,8 @@ import java.util.Random;
 import javafx.scene.layout.Pane;
 
 /**
- * The class to represent the line. It is created of points of the line to make it
- * seem real in the rapids.
+ * The class to represent the line. It is created of points of the line to make
+ * it seem real in the rapids.
  *
  * @author Matias Tamsi
  */
@@ -24,7 +24,7 @@ public class Line {
     private PartOfTheLine point;
     private double thinLine;
     private double thickLine;
-    
+
     /**
      * Line is group of parts of the line.
      */
@@ -52,13 +52,13 @@ public class Line {
 
     /**
      * Method to clear line out of the sight.
-     * 
+     *
      * @param pane The pane of the UI.
      */
     public void clear(Pane pane) {
         if (!line.isEmpty()) {
-            line.forEach(point -> 
-                    pane.getChildren().remove(point.getShapePolygon()));
+            line.forEach(point
+                    -> pane.getChildren().remove(point.getShapePolygon()));
             line.clear();
             pane.getChildren().remove(wave.getShapePolygon());
         }
@@ -104,11 +104,11 @@ public class Line {
             throwLineOverTheTipAndRight(x, y, pane);
         }
     }
-    
+
     /**
-     * Part three of the throwLine method. This method is called
-     * if the line is going to land over and left from the tip.
-     * 
+     * Part three of the throwLine method. This method is called if the line is
+     * going to land over and left from the tip.
+     *
      * @param x coordinate
      * @param y coordinate
      * @param pane The pane of the UI.
@@ -128,10 +128,11 @@ public class Line {
             }
         }
     }
+
     /**
-     * Part three of the throwLine method. This method is called
-     * if the line is going to land over and forward from the tip.
-     * 
+     * Part three of the throwLine method. This method is called if the line is
+     * going to land over and forward from the tip.
+     *
      * @param x coordinate
      * @param y coordinate
      * @param pane The pane of the UI.
@@ -149,10 +150,11 @@ public class Line {
             }
         }
     }
+
     /**
-     * Part three of the throwLine method. This method is called
-     * if the line is going to land over and right from the tip.
-     * 
+     * Part three of the throwLine method. This method is called if the line is
+     * going to land over and right from the tip.
+     *
      * @param x coordinate
      * @param y coordinate
      * @param pane The pane of the UI.
@@ -193,10 +195,11 @@ public class Line {
             throwLineUnderTheTipAndRight(x, y, pane);
         }
     }
+
     /**
-     * Part three of the throwLine method. This method is called
-     * if the line is going to land under and left from the tip.
-     * 
+     * Part three of the throwLine method. This method is called if the line is
+     * going to land under and left from the tip.
+     *
      * @param x coordinate
      * @param y coordinate
      * @param pane The pane of the UI.
@@ -216,10 +219,11 @@ public class Line {
             }
         }
     }
+
     /**
-     * Part three of the throwLine method. This method is called
-     * if the line is going to land under and forward from the tip.
-     * 
+     * Part three of the throwLine method. This method is called if the line is
+     * going to land under and forward from the tip.
+     *
      * @param x coordinate
      * @param y coordinate
      * @param pane The pane of the UI.
@@ -237,10 +241,11 @@ public class Line {
             }
         }
     }
+
     /**
-     * Part three of the throwLine method. This method is called
-     * if the line is going to land under and right from the tip.
-     * 
+     * Part three of the throwLine method. This method is called if the line is
+     * going to land under and right from the tip.
+     *
      * @param x coordinate
      * @param y coordinate
      * @param pane The pane of the UI.

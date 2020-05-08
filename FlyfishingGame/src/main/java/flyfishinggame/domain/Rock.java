@@ -23,25 +23,4 @@ public class Rock extends ObjectInTheRiver {
         this.x = x;
         this.y = y;
     }
-
-    /**
-     * Method returns the x-coordinate.
-     *
-     * @return x
-     */
-    @Override
-    public double getX() {
-        return x;
-    }
-
-    /**
-     * Method returns the y-coordinate.
-     *
-     * @return y
-     */
-    @Override
-    public double getY() {
-        return y;
-    }
-
 }

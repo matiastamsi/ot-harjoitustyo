@@ -8,6 +8,7 @@ import flyfishinggame.ui.FlyfishingUi;
  * @author Matias Tamsi
  */
 public class Main {
+
     /**
      * Calls the main method in user interface.
      *

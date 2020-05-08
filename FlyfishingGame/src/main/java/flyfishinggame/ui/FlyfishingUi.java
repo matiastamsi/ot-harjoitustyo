@@ -41,15 +41,17 @@ public class FlyfishingUi extends Application {
     public static Button startButton;
     public static TextField nicknameField;
     public static Line line;
+    public Rapids rapids;
     private String nickname;
     private int points;
-    public Rapids rapids;
     private FlyfishingDao db;
     private Text topScores;
 
     public FlyfishingUi() throws SQLException {
+        
         init(); //Read configurations.
         poleLength = WIDTH / 5;
+        
         this.db = new FlyfishingDao();
         this.pane = new Pane();
         this.nicknameField = new TextField();
@@ -175,7 +177,7 @@ public class FlyfishingUi extends Application {
                         Label textForFisher = new Label("\n"
                                 + "             Awesome! You got a "
                                 + ((int) fish.getSize()) * 5 + " cm trout!"
-                                + "\n                   You earned " 
+                                + "\n                   You earned "
                                 + ((int) fish.getSize()) * 5 + " points!"
                                 + " \n"
                                 + " \n"
@@ -190,7 +192,8 @@ public class FlyfishingUi extends Application {
                         }
                         borderpane.getChildren().remove(topScores);
                         try {
-                            topScores = new Text(WIDTH - 150, 80, db.getTopFive());
+                            topScores = new Text(WIDTH - 150, 80,
+                                    db.getTopFive());
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }

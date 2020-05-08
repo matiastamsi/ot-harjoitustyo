@@ -3,7 +3,7 @@ package flyfishinggame.domain;
 /**
  * The class to represent a bubble in the river.
  *
- * @author tamsi
+ * @author Matias Tamsi
  */
 public class Bubble {
 

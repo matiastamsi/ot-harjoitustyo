@@ -6,9 +6,10 @@ import javafx.scene.shape.Polygon;
 /**
  * Class makes the rocks to look like a rock and gives an unique shape.
  *
- * @author tamsi
+ * @author Matias Tamsi
  */
 public class RockFactory {
+
     /**
      * Method creates a shape that looks like a rock.
      *
@@ -16,7 +17,7 @@ public class RockFactory {
      * @return shape
      */
     public Polygon createRock(double size) {
-        
+
         Random rnd = new Random();
         Polygon shape = new Polygon();
         double c1 = Math.cos(Math.PI * 2 / 5);

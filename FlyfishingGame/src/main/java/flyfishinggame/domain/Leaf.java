@@ -40,7 +40,7 @@ public class Leaf extends ObjectInTheRiver {
     @Override
     public void movePolygon(double speed) {
         super.movePolygon(speed);
-        super.getShapePolygon().setRotate(super.getShapePolygon().getRotate() 
+        super.getShapePolygon().setRotate(super.getShapePolygon().getRotate()
                 + rotatingmovements);
     }
 }

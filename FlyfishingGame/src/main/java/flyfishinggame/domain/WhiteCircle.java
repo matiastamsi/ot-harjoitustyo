@@ -10,6 +10,7 @@ import javafx.scene.shape.Circle;
  * @author Matias Tamsi
  */
 public class WhiteCircle extends ObjectInTheRiver {
+
     /**
      * The object gets coordinates and size. Also, the colour is defined as
      * white.

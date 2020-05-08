@@ -56,7 +56,6 @@ public class FlyfishingDao {
         p.setString(1, nickname);
         p.setInt(2, score);
         p.executeUpdate();
-
     }
 
     /**
@@ -73,7 +72,7 @@ public class FlyfishingDao {
                 "SELECT * FROM Scores ORDER BY score DESC LIMIT 5");
         ResultSet r = p.executeQuery();
         while (r.next()) {
-            scores += i + ". " + r.getInt("score") + ", " 
+            scores += i + ". " + r.getInt("score") + ", "
                     + r.getString("nickname") + "\n";
             i++;
         }
