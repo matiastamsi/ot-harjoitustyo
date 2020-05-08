@@ -11,5 +11,6 @@
 | 24.04. | 7 | Tein kaikki tarvitut luokat ja aloitin tietokannan käyttöönoton. |
 | 25.04. | 9 | Sain vietyä pelin loppuun sille tasolle, että kaikki toimii mitä tulee pelaamiseen. Hieno säädettävää on vielä karsiessa copy paste - koodi minimiin sekä eriyttää javafx:n komponentit pois muista luokista kuin ui:sta. Lisäksi tein testit sekä korjasin checkstyle virheet. |
 | 26.04 | 3 | Tein viikolle kuusi vaaditut tavoitteet loppuun (mm. dokumentaatioon käyttöohjeen, laajensin arkkitehtuurikuvausta, asetin javadoc:in toimimaan kunnolla yms. |
-
-Yht. 64 h
+| 07.05 | 7 | Lähinnä hienosäätöä: kommentointia, koodin selkeyttämistä, dokumentaation täyttämistä. Lisäksi reagoimista vertaispalautteeseen. |
+| 08.05 | 7 | Sovellus saatu palautusvalmiiksi! |
+Yht. 78 h

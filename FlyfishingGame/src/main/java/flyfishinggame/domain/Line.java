@@ -18,12 +18,19 @@ import javafx.scene.layout.Pane;
  */
 public class Line {
 
-    public List<PartOfTheLine> line = new ArrayList<>();
+    public List<PartOfTheLine> line;
     private Wave wave;
     private double j;
     private PartOfTheLine point;
     private double thinLine;
     private double thickLine;
+    
+    /**
+     * Line is group of parts of the line.
+     */
+    public Line() {
+        this.line = new ArrayList<>();
+    }
 
     /**
      * Method to tell if line touches a rock. Because there is so many parts of
