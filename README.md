@@ -14,6 +14,8 @@ Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suor
 
 [Käyttöohje](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/käyttöohje.md)
 
+[Testausdokumentti](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
+
 [Työaikakirjanpito](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 ## Releaset
@@ -21,6 +23,8 @@ Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suor
 [Viikko 5](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko5)
 
 [Viikko 6](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko6)
+
+[Lopullinen](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/lopullinen_viikko7)
 
 ## Komentorivitoiminnot
 
