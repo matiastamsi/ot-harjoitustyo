@@ -13,3 +13,9 @@ Testeistä on jätetty pois Main-luokka (käynnistää vain sovelluksen), käytt
 ## Testaukseen jääneet puutteet
 
 Alunperin oli tarkoitus jättää testien ulkopuolelle vain käyttöliittymään kuuluvat luokat. Kuitenkin jossain määrin käyttöliittymän ja muun sovelluksen toiminnallisuuden eriyttäminen meni metsään JavaFx:n komponenttien osalta, joten luokat Rapids sekä Line jäävät myös ulos testauksesta.
+
+## Checkstyle
+
+Checkstyle virheitä jäi muutama. Nämä johtuivat Rapids-luokan (koski) metodien rivimäärien ylittymisestä. Kuitenkin nämä metodit ovat toiminnallisuuden puitteissa kannattaneet toteuttaa näin. Checkstyletestauksen ulkopuolelle on jätetty käyttöliittymän luokat.
+
+![checkstyle](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/checkstyle.png)
