@@ -29,5 +29,7 @@ Luokka luo uuden tietokannan (jos sitä ei ole vielä luotu kansioon FlyfishinGa
  
 ## Sovelluksen rakenteeseen jääneet heikkoudet
 
-Luokkia olisi ollut hyvä rakentaa alusta alkaen JavaFx:stä riippumattomaksi (mikään muu luokka ei koske JavaFx:n komponentteihin paitsi FlyfishingUi), koska tästä on harmia. Esimerkiksi testaus on vaikeampaa ja jos JavaFx:n haluaa korvata jokin päivä, sen riittäisi korvata vain käyttöliittymäluokassa.
+Luokkia olisi ollut hyvä rakentaa alusta alkaen JavaFx:stä riippumattomaksi (mikään muu luokka ei koske JavaFx:n komponentteihin paitsi FlyfishingUi tai käyttöliittymään kuuluvat luokat), koska tästä on harmia. Esimerkiksi testaus on vaikeampaa ja jos JavaFx:n haluaa korvata jokin päivä, sen riittäisi korvata vain käyttöliittymäluokassa/pakkauksessa.
+
+Tällä hetkellä kaikille näkymille on perjaatteessa oma luokkansa, mutta toisaalta peli näkymän olisi voinut myös eriyttää omaksi luokaksi jota FlyfishingUi kutsuu.
  
