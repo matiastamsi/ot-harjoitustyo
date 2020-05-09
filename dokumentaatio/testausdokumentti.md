@@ -16,6 +16,6 @@ Alunperin oli tarkoitus jättää testien ulkopuolelle vain käyttöliittymään
 
 ## Checkstyle
 
-Checkstyle virheitä jäi muutama. Nämä johtuivat Rapids-luokan (koski) metodien rivimäärien ylittymisestä. Kuitenkin nämä metodit ovat toiminnallisuuden puitteissa kannattaneet toteuttaa näin. Checkstyletestauksen ulkopuolelle on jätetty käyttöliittymän luokat.
+Checkstyle virheitä jäi muutama. Nämä johtuivat Rapids-luokan (koski) metodien rivimäärien ylittymisestä. Kuitenkin nämä metodit ovat toiminnallisuuden puitteissa kannattaneet toteuttaa näin. Checkstyletestauksen ulkopuolelle on jätetty luokka FlyfishingUi.
 
 ![checkstyle](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/checkstyle.png)
