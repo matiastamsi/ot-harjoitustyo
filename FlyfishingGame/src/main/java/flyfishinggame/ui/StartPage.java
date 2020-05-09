@@ -19,6 +19,7 @@ import javafx.scene.text.Font;
  * @author Matias Tamsi
  */
 public class StartPage {
+
     /**
      * Start page is formed by calling this method.
      */
@@ -26,8 +27,7 @@ public class StartPage {
         //Use borderpane as a base for features.
         BorderPane startingSight = new BorderPane();
         startingSight.setPrefSize(WIDTH, HEIGHT);
-        Label startingText = new Label("\n"
-                + "     Hi flyfisher! Good to see you!\n\n"
+        Label startingText = new Label("\n" + "     Hi flyfisher! Good to see you!\n\n"
                 + "     You might already know this, but here is a tip for you:\n"
                 + "     Fish, such as trout, waits for food in flows caused by rocks.\n\n"
                 + "     When you feel ready, give your nickname and press the start.\n"

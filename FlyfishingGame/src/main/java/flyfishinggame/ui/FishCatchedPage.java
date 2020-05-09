@@ -21,6 +21,8 @@ public class FishCatchedPage {
     /**
      * If player catches a fish, show the length of the fish and points of that
      * catch.
+     * 
+     * @param fish the fish that is been caught.
      */
     public void createPage(Fish fish) {
         BorderPane fishCatched = new BorderPane();
@@ -30,11 +32,7 @@ public class FishCatchedPage {
                 + ((int) fish.getSize()) * 5 + " cm trout!"
                 + "\n                   You earned "
                 + ((int) fish.getSize()) * 5 + " points!"
-                + " \n"
-                + " \n"
-                + " \n"
-                + " \n"
-                + " \n");
+                + " \n" + " \n" + " \n" + " \n" + " \n");
         textForFisher.setFont(new Font("Arial", 40));
         fishCatched.setTop(textForFisher);
         fishCatched.setCenter(continueButton);

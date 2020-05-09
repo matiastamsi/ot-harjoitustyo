@@ -57,8 +57,7 @@ public class Line {
      */
     public void clear(Pane pane) {
         if (!line.isEmpty()) {
-            line.forEach(point
-                    -> pane.getChildren().remove(point.getShapePolygon()));
+            line.forEach(point -> pane.getChildren().remove(point.getShapePolygon()));
             line.clear();
             pane.getChildren().remove(wave.getShapePolygon());
         }
