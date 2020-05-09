@@ -2,7 +2,7 @@
 
 ## Toteutetut testit
 
-Alla näkyvässä kuvassa näkyy sovelluksen luokille tehdyt testiluokat. Niissä on testattu yksittäisiä luokkaan liittyviä toimintoja kuin myös yhteistoimintaa muiden sovelluksen luokkien kanssa.
+Alla näkyvässä kuvassa näkyy sovelluksen luokille tehdyt testiluokat. Niissä on testattu yksittäisiä luokkaan liittyviä toimintoja kuin myös yhteistoimintaa muiden sovelluksen luokkien kanssa. Näiden testien rivi- ja haarautuvuuskattavuus ovat 100%.
 
 ![testiluokat](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/testiluokat.png)
 
