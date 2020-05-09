@@ -26,3 +26,8 @@ Luokka luo uuden tietokannan (jos sitä ei ole vielä luotu kansioon FlyfishinGa
       nickname TEXT
       score INTEGER
       )
+ 
+## Sovelluksen rakenteeseen jääneet heikkoudet
+
+Luokkia olisi ollut hyvä rakentaa alusta alkaen JavaFx:stä riippumattomaksi (mikään muu luokka ei koske JavaFx:n komponentteihin paitsi FlyfishingUi), koska tästä on harmia. Esimerkiksi testaus on vaikeampaa ja jos JavaFx:n haluaa korvata jokin päivä, sen riittäisi korvata vain käyttöliittymäluokassa.
+ 
