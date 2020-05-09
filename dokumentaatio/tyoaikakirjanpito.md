@@ -13,4 +13,5 @@
 | 26.04 | 3 | Tein viikolle kuusi vaaditut tavoitteet loppuun (mm. dokumentaatioon käyttöohjeen, laajensin arkkitehtuurikuvausta, asetin javadoc:in toimimaan kunnolla yms. |
 | 07.05 | 7 | Lähinnä hienosäätöä: kommentointia, koodin selkeyttämistä, dokumentaation täyttämistä. Lisäksi reagoimista vertaispalautteeseen. |
 | 08.05 | 7 | Sovellus saatu palautusvalmiiksi! |
-| Yht. | 78 h |
+| 09.05 | 5 | En voinut olla vielä muokkaamatta mm. käyttöliittymää siten, että kalasaalisnäkymä on nyt oma luokkansa, kalan syödessä pärskeet osuvat paremmin kohille sekä siistimällä vielä lisää koodia. Lisäksi täydensin vielä dokumentaatiota. |
+| Yht. | 83 h |
