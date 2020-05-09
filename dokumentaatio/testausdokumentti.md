@@ -2,7 +2,7 @@
 
 ## Toteutetut testit
 
-Alla näkyvässä kuvassa näkyy sovelluksen luokille tehdyt testiluokat. Niissä on testattu yksittäisiä luokkaan liittyviä toimintoja kuin myös yhteistoimintaa muiden sovelluksen luokkien kanssa. Näiden testien rivi- ja haarautuvuuskattavuus ovat 100%.
+Alla näkyvässä kuvassa näkyy sovelluksen luokille tehdyt testiluokat. Niissä on testattu yksittäisiä luokkaan liittyviä toimintoja kuin myös yhteistoimintaa muiden sovelluksen luokkien kanssa. Näiden testien rivi- ja haarautumakattavuus ovat 100%.
 
 ![testiluokat](https://github.com/matiastamsi/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/testiluokat.png)
 
@@ -12,7 +12,7 @@ Testeistä on jätetty pois Main-luokka (käynnistää vain sovelluksen), käytt
 
 ## Testaukseen jääneet puutteet
 
-Alunperin oli tarkoitus jättää testien ulkopuolelle vain käyttöliittymään kuuluvat luokat. Kuitenkin jossain määrin käyttöliittymän ja muun sovelluksen toiminnallisuuden eriyttäminen meni metsään JavaFx:n komponenttien osalta, joten luokat Rapids sekä Line jäävät myös ulos testauksesta.
+Alunperin oli tarkoitus jättää testien ulkopuolelle vain käyttöliittymään kuuluvat luokat. Kuitenkin jossain määrin käyttöliittymän ja muun sovelluksen toiminnallisuuden eriyttäminen meni metsään JavaFx:n komponenttien osalta, joten luokat Rapids sekä Line jäävät myös ulos testauksesta. Jos aikaa olisi vielä ollut, olisin muokannut näistä luokista JavaFx:ään tukeutumattomat. Valitettavasti huomasin tämän liian myöhään.
 
 ## Checkstyle
 
