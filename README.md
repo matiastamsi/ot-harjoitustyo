@@ -24,7 +24,7 @@ Pelaaja saa saaleistaan pisteitä, joita voikin vertailla toisten pelaajien suor
 
 [Viikko 6](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/viikko6)
 
-[Lopullinen](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/lopullinen_viikko7)
+[Loppupalautus](https://github.com/matiastamsi/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Komentorivitoiminnot
 
