@@ -39,28 +39,29 @@ public class FlyfishingUi extends Application {
     public static Stage stage;
     public static Scene scene;
     public static Button startButton;
+    public static Button continueButton;
     public static TextField nicknameField;
     public static Line line;
-    public Rapids rapids;
-    private String nickname;
-    private int points;
-    private FlyfishingDao db;
-    private Text topScores;
+    public static Rapids rapids;
+    public static String nickname;
+    public static int points;
+    public static FlyfishingDao db;
+    public static Text topScores;
 
     public FlyfishingUi() throws SQLException {
-        
+
         init(); //Read configurations.
         poleLength = WIDTH / 5;
-        
-        this.db = new FlyfishingDao();
-        this.pane = new Pane();
-        this.nicknameField = new TextField();
-        this.startButton = new Button("Start");
-        this.nickname = "";
-        this.points = 0;
-        this.rapids = new Rapids();
-        this.line = new Line();
-        this.topScores = null;
+        db = new FlyfishingDao();
+        pane = new Pane();
+        nicknameField = new TextField();
+        startButton = new Button("Start");
+        continueButton = new Button("Continue");
+        nickname = "";
+        points = 0;
+        rapids = new Rapids();
+        line = new Line();
+        topScores = null;
     }
 
     @Override
@@ -166,24 +167,11 @@ public class FlyfishingUi extends Application {
         }
         );
 
-        Button continueButton = new Button("Continue");
         scene.setOnKeyPressed(ke -> {
             KeyCode keyCode = ke.getCode();
             if (keyCode.equals(KeyCode.C)) {
                 for (Fish fish : rapids.getFishes()) {
                     if (fish.isHooked()) {
-                        BorderPane fishCatched = new BorderPane();
-                        fishCatched.setPrefSize(WIDTH, HEIGHT);
-                        Label textForFisher = new Label("\n"
-                                + "             Awesome! You got a "
-                                + ((int) fish.getSize()) * 5 + " cm trout!"
-                                + "\n                   You earned "
-                                + ((int) fish.getSize()) * 5 + " points!"
-                                + " \n"
-                                + " \n"
-                                + " \n"
-                                + " \n"
-                                + " \n");
                         points = points + ((int) fish.getSize()) * 5;
                         try {
                             db.addScore(nickname, points);
@@ -192,20 +180,14 @@ public class FlyfishingUi extends Application {
                         }
                         borderpane.getChildren().remove(topScores);
                         try {
-                            topScores = new Text(WIDTH - 150, 80,
-                                    db.getTopFive());
+                            topScores = new Text(WIDTH - 150, 80, db.getTopFive());
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
                         borderpane.getChildren().add(topScores);
                         text.setText("Points: " + points);
-                        textForFisher.setFont(new Font("Arial", 40));
-                        fishCatched.setTop(textForFisher);
-                        fishCatched.setCenter(continueButton);
-                        Scene catchScene = new Scene(fishCatched);
-                        stage.setScene(catchScene);
-                        stage.setTitle("Fish catched!");
-                        stage.show();
+                        FishCatchedPage fCP = new FishCatchedPage();
+                        fCP.createPage(fish);
                         return;
                     }
                 }

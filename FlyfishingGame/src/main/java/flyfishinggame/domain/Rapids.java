@@ -343,12 +343,13 @@ public class Rapids {
      */
     public void fishBite(Fish fish, Pane pane) {
         for (int i = 6; i > 1; i--) {
-            int randomX = 20 + r.nextInt(5);
-            int randomY = 20 + r.nextInt(5);
+            double s = fish.getSize();
+            int rX = r.nextInt((int) s);
+            int rY = r.nextInt((int) s);
             Bubble bubble = new Bubble(
-                    ((int) (fish.getX() * 0.95 + randomX * fish.getSize() / i / 2)),
-                    ((int) (fish.getY() * 0.80 + randomY * fish.getSize() / i / 2)),
-                    (int) fish.getSize() * i / 2);
+                    ((int) (fish.getX() + rX + s / i)),
+                    ((int) (fish.getY() + rY + s / i)),
+                    (int) s * i / 2);
             pane.getChildren().add(bubble.black.getShapeCircle());
             pane.getChildren().add(bubble.white.getShapeCircle());
             splashRings.add(bubble);
