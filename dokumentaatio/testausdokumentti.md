@@ -8,7 +8,7 @@ Alla näkyvässä kuvassa näkyy sovelluksen luokille tehdyt testiluokat. Niiss�
 
 ## Testit joita ei toteutettu
 
-Testeistä on jätetty pois Main-luokka (käynnistää vain sovelluksen), käyttöliittymäpakkaukseen kuuluvat luokat (FlyfishingUi ja StartPage), sekä luokat Rapids ja Line. Testauksen ulosjätön syy on (Main-luokkaa lukuunottamatta) JavaFx:n aiheuttama ongelmallisuus testeissä.
+Testeistä on jätetty pois Main-luokka (käynnistää vain sovelluksen), käyttöliittymäpakkaukseen kuuluvat luokat sekä luokat Rapids ja Line. Testauksen ulosjätön syy on (Main-luokkaa lukuunottamatta) JavaFx:n aiheuttama ongelmallisuus testeissä.
 
 ## Testaukseen jääneet puutteet
 
